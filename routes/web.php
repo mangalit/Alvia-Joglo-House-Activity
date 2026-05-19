@@ -1,9 +1,7 @@
 <?php
-use App\Http\Controllers\ExperienceController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/experiences', [ExperienceController::class, 'index'])->name('experiences.index');
+// Saat user mengakses URL utama '/', arahkan ke LandingController fungsi index
+Route::get('/', [LandingController::class, 'index'])->name('home');

@@ -1,11 +1,561 @@
-@import 'tailwindcss';
+/* ==========================================================================
+   1. GLOBAL & RESET STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. NAVBAR & HERO SECTION (UPDATED DENGAN DESAIN BARU)
+   ========================================================================== */
+.navbar {
+    background-color: #333333; /* Header warna abu solid (Awal) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 60px;
+    position: sticky; /* UBAH INI: Agar navbar menempel di atas saat di-scroll */
+    top: 0;
+    z-index: 999; /* Diperbesar agar selalu berada paling atas */
+    transition: all 0.4s ease; /* Transisi mulus saat berubah warna */
+}
+
+/* --- KELAS BARU UNTUK EFEK SCROLL --- */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.65); /* Berubah jadi Hitam Transparan */
+    backdrop-filter: blur(5px); /* Opsional: Tambahan efek kaca estetik */
+}
+
+/* Warna menu saat di-scroll (Mengikuti warna teks Experience)
+.navbar.scrolled .nav-links a {
+    color: #AC8F57;
+}*/
+
+/* Efek hover dikembalikan ke putih saat navbar sedang mode scroll
+.navbar.scrolled .nav-links a:hover {
+    color: #ffffff;
+}*/
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 45px; /* Sesuaikan ukuran logo (dari resources/images/logo.png) */
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Italianno', cursive; /* Font Italianno Reguler */
+    color: #AC8F57; /* Hex AC8F57 */
+    font-size: 38px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-family: 'Cinzel', serif; /* Font Cinzel Bold */
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: #AC8F57;
+}
+
+/* Tombol Hamburger (Awalnya Sembunyi) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 75px); /* Menyesuaikan tinggi layar dikurangi header abu-abu */
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Gunakan Flexbox agar teks otomatis mengunci di tengah-tengah background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: -30px; /* Sedikit ditarik ke atas agar tidak terlalu berat ke bawah */
+}
+
+.welcome-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    color: #C99A2A;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 30px; /* Dibuat 0 agar nempel dengan judul utama */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 80px; /* Ukuran diperbesar */
+    color: #ffffff;
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-top: 50px;
+    margin-bottom: 30px; /* Margin negatif untuk menarik tulisan Experience ke atas/nempel */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.sub-title {
+    font-family: 'Italianno', cursive;
+    font-weight: 400;
+    font-size: 80px; /* Ukuran diperbesar */
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 60px; /* Jarak ke paragraf bawah */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.description {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    color: #C99A2A;
+    font-size: 20px; /* Ukuran font disesuaikan */
+    line-height: 1.5;
+    max-width: 600px; /* Membatasi lebar teks agar barisnya turun/putus sesuai gambar */
+    margin: 0 auto; /* Memastikan teks tetap di tengah */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ==========================================================================
+   3. ABOUT SECTION
+   ========================================================================== */
+.about-section {
+    background-color: transparent; /* Dibuat transparan agar gambar belakang terlihat */
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.about-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 0px; /* Jarak celah di tengah antara kotak kiri dan kanan */
+    align-items: stretch;
+}
+
+.about-box {
+    flex: 1;
+    background-color: #121212; /* Warna Background Hitam Pekat */
+    padding: 70px 10% 100px 10%;
+    border-radius: 50px 50px 0 0; /* Lekukan membulat di sudut Kiri Atas dan Kanan Atas */
+    margin-top: -80px; /* Ditarik ke atas untuk menimpa gambar Hero */
+
+    /* Pengaturan Font Paragraf (Inter Reguler) */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.about-box p {
+    margin-bottom: 25px; /* Jarak antar paragraf */
+}
+/* Penyesuaian kusus kotak kiri agar tidak terlalu jauh dengan kotak kanan */
+.about-box:first-child {
+    padding-right: 2%; /* Jarak kanan dirapatkan sedikit */
+}
+
+/* Penyesuaian kusus kotak kanan agar tidak terlalu jauh dengan kotak kiri */
+.about-box:last-child {
+    padding-left: 2%; /* Jarak kiri dirapatkan sedikit */
+}
+/* Teks tebal di paragraf pertama kotak kiri */
+.about-box p:first-child {
+    font-weight: 500; /* Sedikit lebih tebal */
+    color: #ffffff;
+    line-height: 1.6;
+    margin-top: -5px; /* Disesuaikan agar rata dengan Dropcap */
+}
+
+/* Huruf "A" (Dropcap) */
+.dropcap {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; /* Gaya Italic/Miring */
+    font-weight: 500; /* Bold */
+    color: #CA792A; /* Hex CA792A */
+    font-size: 50px; /* Ukuran huruf A diperbesar */
+    float: left;
+    line-height: 50px;
+    padding-right: 5px;
+    padding-top: 0px;
+}
+
+
+/* ==========================================================================
+   4. EXPERIENCE GRID SECTION
+   ========================================================================== */
+.experience-section {
+    padding: 100px 60px;
+    background-color: #fafafa;
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.experience-text {
+    width: 300px;
+}
+
+.experience-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #D07D5D;
+    font-size: 52px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #D07D5D;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.experience-desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.15em; /* 15% */
+}
+
+/* Grid Layout */
+.grid-container {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+}
+
+.grid-card {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #ffffff; /* Overlay putih tipis */
+}
+
+.grid-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay Hitam Transparan di ATAS gambar */
+.card-top-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.card-top-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Ukuran Asimetris */
+.card-activity, .card-tour {
+    width: 250px;
+    height: 400px;
+}
+
+.grid-middle-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+}
+
+.card-tracking, .card-transport {
+    height: 192px;
+}
+
+.more-activity-wrapper {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-more-activity {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #333333;
+    color: #333333;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+}
+
+.btn-more-activity:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   5. GALLERY HIGHLIGHT SECTION
+   ========================================================================== */
+.gallery-section {
+    padding: 0 60px 80px 60px;
+    background-color: #ffffff;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.gallery-item {
+    flex: 1;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ==========================================================================
+   6. FOOTER SECTION
+   ========================================================================== */
+.main-footer {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 80px 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.brand-column {
+    display: flex;
+    align-items: center;
+}
+
+.footer-column h4 {
+    font-family: 'Playfair Display', serif;
+    color: #AC8F57;
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #bbbbbb;
+    font-size: 13px;
+}
+
+.footer-column ul li a:hover {
+    color: #AC8F57;
+}
+
+.footer-column p {
+    font-size: 13px;
+    color: #bbbbbb;
+    line-height: 1.6;
+}
+
+.footer-contact-detail {
+    margin-top: 15px;
+    font-weight: 500;
+    color: #ffffff !important;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.social-icons a:hover {
+    color: #AC8F57;
+}
+
+.btn-book-now {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.btn-book-now:hover {
+    background-color: #AC8F57;
+    border-color: #AC8F57;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES (HP & TABLET)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .experience-container {
+        flex-direction: column;
+    }
+    .experience-text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .grid-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar HP */
+    .navbar {
+        padding: 15px 20px;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(51, 51, 51, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s ease-in-out;
+        z-index: 12;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+    .nav-links.active {
+        right: 0;
+    }
+    .hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .hamburger.toggle span:nth-child(2) { opacity: 0; }
+    .hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+    /* Hero Teks Mobile */
+    .hero-content { margin-top: 5vh; }
+    .main-title { font-size: 42px; letter-spacing: 3px; }
+    .sub-title { font-size: 42px; }
+    .description { font-size: 13px; }
+
+    /* Area Lainnya di Mobile */
+    .about-container { flex-direction: column; gap: 30px; }
+    .about-section { padding: 60px 20px; }
+    .grid-container { flex-direction: column; }
+    .card-activity, .card-tour, .grid-middle-wrapper { width: 100%; }
+    .card-activity, .card-tour { height: 300px; }
+    .card-tracking, .card-transport { height: 180px; }
+    .experience-section { padding: 60px 20px; }
+    .gallery-container { flex-direction: column; }
+    .gallery-item { height: 200px; }
+    .gallery-section { padding: 0 20px 60px 20px; }
+    .footer-container { flex-direction: column; gap: 40px; }
+    .main-footer { padding: 60px 20px; }
 }
