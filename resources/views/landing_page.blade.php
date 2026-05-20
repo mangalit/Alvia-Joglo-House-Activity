@@ -8,6 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400&family=Italianno&family=Lato:wght@800;900&family=Playfair+Display:ital,wght@0,500;0,800;1,400;1,700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
@@ -76,26 +77,28 @@
             </div>
 
             <div class="grid-container">
-                <div class="grid-card card-activity">
+                <a href="#" class="grid-card card-activity">
                     <img src="{{ Vite::asset('resources/images/menu-activity.png') }}" alt="Activity">
                     <div class="card-top-overlay"><h3>Activity</h3></div>
-                </div>
+                </a>
+
                 <div class="grid-middle-wrapper">
-                    <div class="grid-card card-tracking">
+                    <a href="#" class="grid-card card-tracking">
                         <img src="{{ Vite::asset('resources/images/menu-tracking.png') }}" alt="Tracking">
                         <div class="card-top-overlay"><h3>Tracking</h3></div>
-                    </div>
-                    <div class="grid-card card-transport">
+                    </a>
+
+                    <a href="#" class="grid-card card-transport">
                         <img src="{{ Vite::asset('resources/images/menu-transport.png') }}" alt="Transport">
                         <div class="card-top-overlay"><h3>Transport</h3></div>
-                    </div>
+                    </a>
                 </div>
-                <div class="grid-card card-tour">
+
+                <a href="#" class="grid-card card-tour">
                     <img src="{{ Vite::asset('resources/images/menu_tour.png') }}" alt="Tour">
                     <div class="card-top-overlay"><h3>Tour</h3></div>
-                </div>
+                </a>
             </div>
-        </div>
     </section>
 
         <div class="more-activity-wrapper">
@@ -115,13 +118,15 @@
 
     <footer class="main-footer">
         <div class="footer-container">
-            <div class="footer-column brand-column">
-                <span class="logo-text">Experience</span>
-            </div>
 
-            <div class="footer-column">
-                <h4>Navigation</h4>
-                <ul>
+            <a href="#" class="footer-column brand-column">
+                <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Alvia Joglo Logo" class="footer-logo-img">
+                <span class="footer-logo-text">Experience</span>
+            </a>
+
+            <div class="footer-column nav-column">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-nav-links">
                     <li><a href="#">ACTIVITY</a></li>
                     <li><a href="#">ALVIA TRACKING TRIP</a></li>
                     <li><a href="#">TOUR ACTIVITY</a></li>
@@ -130,21 +135,31 @@
                 </ul>
             </div>
 
-            <div class="footer-column">
-                <h4>Contact Us</h4>
-                <p>Alvia Joglo House Experience.<br>Pulagan Tampaksiring, Gianyar, Bali<br>Post Code 80552</p>
-                <p class="footer-contact-detail">+62 878-9903-0306<br>alviajoglohouse@gmail.com</p>
+            <div class="footer-column contact-column">
+                <h4 class="footer-heading">Contact Us</h4>
+                <div class="contact-info">
+                    <p class="address">
+                        Alvia Joglo House Experience.<br>
+                        Pulagan Tampaksiring, Gianyar, Bali<br>
+                        Post Code 80552
+                    </p>
+                    <p class="details">
+                        <a href="#">+62 878-9903-0306</a><br>
+                        <a href="mailto:alviajoglohouse@gmail.com">alviajoglohouse@gmail.com</a>
+                    </p>
+                </div>
             </div>
 
             <div class="footer-column social-column">
-                <h4>Get Connected</h4>
-                <div class="social-icons">
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">WA</a>
+                <h4 class="footer-heading">Get Connected</h4>
+                <div class="footer-social-icons">
+                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 </div>
-                <a href="#" class="btn-book-now">BOOK NOW</a>
+                <a href="#" class="btn-footer-book">BOOK NOW</a>
             </div>
+
         </div>
     </footer>
 

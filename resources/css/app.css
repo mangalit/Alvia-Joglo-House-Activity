@@ -261,12 +261,14 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    gap: 80px;
-    align-items: flex-start;
+    gap: 60px;
+    /* KUNCI 1: Menyelaraskan teks dan grid gambar agar posisinya persis di TENGAH */
+    align-items: center;
 }
 
 .experience-text {
-    width: 300px;
+    width: 320px;
+    flex-shrink: 0; /* Mencegah kolom teks mengecil */
 }
 
 .experience-title {
@@ -274,9 +276,9 @@ a {
     font-weight: 600;
     font-style: italic;
     color: #D07D5D;
-    font-size: 52px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #D07D5D;
+    font-size: 58px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #D07D5D;
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -285,22 +287,27 @@ a {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: #222222;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
-    letter-spacing: 0.15em; /* 15% */
+    letter-spacing: 0.15em; /* Jarak spasi huruf 15% */
 }
 
-/* Grid Layout */
+/* --- GRID LAYOUT --- */
 .grid-container {
     flex: 1;
     display: flex;
-    gap: 15px;
+    gap: 1px; /* Jarak antar kolom */
+    /* KUNCI 2: Memastikan Activity & Tour berada di tengah-tengah Tracking/Transport */
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-card {
     position: relative;
     overflow: hidden;
-    border: 5px solid #ffffff; /* Overlay putih tipis */
+    display: block; /* Penting karena tag <a> secara default adalah inline */
+    text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+    /* Border putih dihapus agar bersih seperti di referensi */
 }
 
 .grid-card img {
@@ -308,16 +315,21 @@ a {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transisi super halus */
 }
 
-/* Overlay Hitam Transparan di ATAS gambar */
+.grid-card:hover img {
+    transform: scale(1.08); /* Skala pembesaran 8% */
+}
+
+/* Overlay Hitam Transparan di ATAS gambar dengan efek Gradasi */
 .card-top-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .card-top-overlay h3 {
@@ -327,23 +339,53 @@ a {
     text-align: center;
 }
 
-/* Ukuran Asimetris */
+/* --- UKURAN ASIMETRIS KOTAK GAMBAR --- */
+/* Kolom Kiri & Kanan */
 .card-activity, .card-tour {
-    width: 250px;
-    height: 400px;
+    width: 260px;
+    height: 420px;
 }
 
+/* Kolom Tengah (Lebih panjang secara total) */
 .grid-middle-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 250px;
+    gap: 1px;
+    width: 260px;
 }
 
-.card-tracking, .card-transport {
-    height: 192px;
+.card-tracking {
+    height: 380px;
 }
 
+.card-transport {
+    height: 200px;
+}
+
+/* ==========================================================================
+   RESPONSIVE HP (Tambahkan ini jika belum ada)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .experience-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .experience-text {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .grid-container {
+        width: 100%;
+        flex-direction: column; /* Menumpuk gambar ke bawah di HP */
+    }
+    .card-activity, .card-tour, .grid-middle-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    .grid-card img {
+        height: 300px;
+    }
+}
 .more-activity-wrapper {
     text-align: center;
     margin-top: 50px;
@@ -399,97 +441,159 @@ a {
    6. FOOTER SECTION
    ========================================================================== */
 .main-footer {
-    background-color: #222222;
-    color: #ffffff;
-    padding: 80px 60px;
+    background-color: #333333; /* Background abu-abu gelap */
+    padding: 40px 60px;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    align-items: flex-start;
+    gap: 30px;
 }
 
-.footer-column {
-    flex: 1;
-}
-
+/* --- Kolom 1: Brand --- */
 .brand-column {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 20%;
+    align-self: center;
 }
 
-.footer-column h4 {
+.footer-logo-img {
+    height: 120px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.footer-logo-text {
+    font-family: 'Italianno', cursive;
+    color: #AC8F57; /* Warna Emas */
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* --- Global Heading Footer --- */
+.footer-heading {
     font-family: 'Playfair Display', serif;
-    color: #AC8F57;
-    font-size: 16px;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 400;
     margin-bottom: 25px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
-.footer-column ul {
+/* --- Kolom 2: Navigation --- */
+.nav-column {
+    width: 25%;
+}
+
+.nav-column .footer-heading {
+    margin-bottom: 5px; /* Ubah angka ini jika ingin lebih jauh/dekat (sebelumnya 25px) */
+}
+
+.footer-nav-links {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 220px;
 }
 
-.footer-column ul li {
-    margin-bottom: 12px;
+.footer-nav-links li {
+    border-bottom: 1px solid #ffffff; /* Garis pembatas putih tegas */
 }
 
-.footer-column ul li a {
-    color: #bbbbbb;
-    font-size: 13px;
+.footer-nav-links li a {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    display: block;
+    padding: 10px 0; /* Memberi jarak nafas antara teks dan garis */
+    transition: color 0.3s ease;
 }
 
-.footer-column ul li a:hover {
+.footer-nav-links li a:hover {
     color: #AC8F57;
 }
 
-.footer-column p {
-    font-size: 13px;
-    color: #bbbbbb;
+/* --- Kolom 3: Contact Us --- */
+.contact-column {
+    width: 30%;
+    text-align: center; /* Teks Rata Tengah */
+}
+
+.contact-info {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
     line-height: 1.6;
 }
 
-.footer-contact-detail {
-    margin-top: 15px;
-    font-weight: 500;
-    color: #ffffff !important;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.social-icons a {
+.contact-info .details a {
     color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
+    text-decoration: none; /* Menghilangkan garis bawah bawaan browser */
+    transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
+/* Memberikan efek hover warna emas agar senada dengan menu lain */
+.contact-info .details a:hover {
     color: #AC8F57;
 }
 
-.btn-book-now {
-    display: inline-block;
-    padding: 12px 35px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    font-size: 12px;
-    letter-spacing: 2px;
-    border-radius: 25px;
-    font-weight: 500;
+.contact-info .address {
+    margin-bottom: 25px;
 }
 
-.btn-book-now:hover {
-    background-color: #AC8F57;
-    border-color: #AC8F57;
+/* --- Kolom 4: Get Connected --- */
+.social-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-social-icons a {
+    color: #ffffff; /* Ikon warna putih */
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: #AC8F57;
+    transform: translateY(-3px); /* Efek melayang saat di-hover */
+}
+
+.btn-footer-book {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #ffffff;
     color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-footer-book:hover {
+    background-color: #ffffff;
+    color: #333333;
 }
 
 
