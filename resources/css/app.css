@@ -108,7 +108,7 @@ a {
 .hero-section {
     position: relative;
     width: 100%;
-    height: calc(100vh - 75px); /* Menyesuaikan tinggi layar dikurangi header abu-abu */
+    height: 100vh; /* Menyesuaikan tinggi layar dikurangi header abu-abu */
     background-image: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -388,7 +388,7 @@ a {
 }
 .more-activity-wrapper {
     text-align: center;
-    margin-top: 50px;
+    background-color: #fafafa;
 }
 
 .btn-more-activity {
@@ -413,7 +413,7 @@ a {
    ========================================================================== */
 .gallery-section {
     padding: 0 60px 80px 60px;
-    background-color: #ffffff;
+    background-color: #fafafa;
 }
 
 .gallery-container {
@@ -662,4 +662,924 @@ a {
     .gallery-section { padding: 0 20px 60px 20px; }
     .footer-container { flex-direction: column; gap: 40px; }
     .main-footer { padding: 60px 20px; }
+}
+
+/* ==========================================================================
+   8. ACTIVITY PAGE (NEW)
+   ========================================================================== */
+/* Hero Header Activity */
+.activity-hero {
+    position: relative;
+    height: 100vh; /* Ditinggikan agar gambar lebih terlihat penuh */
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay transparan tipis untuk seluruh gambar belakang */
+.activity-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.15); /* Dibuat sangat tipis agar luar bingkai tetap terang */
+}
+
+/* Bingkai besar di tengah */
+.activity-hero-box {
+    position: relative;
+    z-index: 2;
+    width: 96%; /* Lebar bingkai 75% dari layar */
+    height: 93%; /* Tinggi bingkai 70% dari tinggi area hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* Area dalam bingkai dibuat lebih gelap */
+}
+
+.activity-hero-box-outline {
+    position: relative;
+    z-index: 2;
+    border: 3px solid #ffffff;
+    width: 55%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Menghilangkan warna gelap di dalam kotak */
+}
+
+/* Tulisan ACTIVITY */
+.activity-hero-title {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    font-size: 100px; /* Ukuran diperbesar drastis */
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5); /* Bayangan agar teks lebih terbaca */
+}
+
+.activity-section {
+    background-color: #FAFAFA;
+}
+
+.activity-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* KUNCI RAHASIA: Menghilangkan margin bawah HANYA pada aktivitas paling terakhir */
+.activity-container:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   LAYOUT KONTEN ACTIVITY (RAFTING DLL)
+   ========================================================================== */
+/* 1. Bagian Header (Judul Kiri & Kanan) */
+/* 1. Bagian Header (Judul Kiri & Kanan) */
+.act-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 40px;
+}
+
+/* Kolom Judul (Kiri) */
+.act-title-col {
+    flex: 1;
+    text-align: right;
+    padding-right: 30%; /* Jarak aman ke bagian tengah */
+}
+
+.act-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 75px;
+    font-weight: 400; /* Normal (tidak terlalu tebal) */
+    color: #000000; /* Hitam pekat sesuai request */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Memastikan teks menempel ke arah tengah layar */
+    white-space: nowrap;
+}
+
+/* Tanda strip tipis */
+.thin-dash {
+    display: inline-block;
+    width: 50px; /* Panjang garis, bisa Anda tambah jika kurang panjang */
+    height: 2px; /* Ketebalan mutlak 1 pixel, dijamin sangat tipis! */
+    background-color: #000000;
+    margin-right: 20px; /* Jarak dari garis ke teks "Rafting" */
+}
+
+/* Kolom Info (Kanan) */
+.act-info-col {
+    flex: 1;
+    text-align: left; /* Tetap rata kiri menjauhi garis tengah */
+    padding-left: 50px;
+}
+
+.act-info-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 42px;
+    font-weight: 400;
+    color: #000000; /* Hitam pekat sesuai request */
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.act-info-col .min-book {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600; /* Semi Bold sesuai request */
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #555555; /* Abu-abu sesuai request */
+    margin-bottom: 60px;
+    white-space: nowrap;
+}
+
+.act-info-col .price {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600; /* Semi Bold sesuai request */
+    color: #555555; /* Abu-abu sesuai request */
+    margin-bottom: 50px;
+    white-space: nowrap;
+}
+
+.act-info-col .price strong {
+    font-weight: 700;
+    color: #000000; /* Angka harganya dibuat hitam solid agar tegas */
+}
+
+/* 2. Bagian Konten (Box Teks & Gambar) */
+.act-content {
+    display: flex;
+    align-items: stretch; /* KUNCI UTAMA: Memaksa kolom kiri dan kanan sama tinggi */
+    width: 100%;
+    height: 550px; /* Menentukan tinggi seragam agar grid gambar terpotong rapi dan proporsional */
+}
+
+.act-text-box {
+    flex: 0 0 50%; /* Memaksa agar tidak membesar/menyusut dari 50% */
+    width: 50%;    /* Lebar pasti 50% */
+    height: 100%; /* Memaksa box kiri mengisi 100% dari tinggi 550px */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.act-text-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+}
+
+.act-text-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #eeeeee;
+    margin-bottom: 35px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+}
+
+.act-btn {
+    display: inline-block;
+    padding: 10px 35px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.act-btn:hover {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* 3. Grid 4 Gambar */
+.act-images {
+    flex: 0 0 50%; /* Memaksa agar tidak membesar/menyusut dari 50% */
+    width: 50%;    /* Lebar pasti 50% */
+    height: 100%; /* Memaksa grid kanan mengisi 100% dari tinggi 550px */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.act-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Mencegah ada celah kosong di bawah gambar */
+}
+
+/* ==========================================================================
+   EFEK REVERSE UNTUK LAYOUT ZIG-ZAG (TUBING)
+   ========================================================================== */
+.act-header.reverse {
+    flex-direction: row-reverse;
+}
+
+/* 1. Kolom Info ("Water Leisure") yang berada di KIRI */
+.act-header.reverse .act-info-col {
+    padding-left: 20px; /* MAKIN KECIL angka ini = tulisan makin tertarik ke KIRI (menjauh dari tengah) */
+    padding-right: 40px;
+    text-align: left;
+}
+
+/* 2. Kolom Judul ("- Tubing") yang berada di KANAN */
+.act-header.reverse .act-title-col {
+    padding-left: 15%; /* MAKIN BESAR persentase ini = tulisan makin terdorong ke KANAN (menjauh dari tengah) */
+    padding-right: 40px;
+}
+
+/* Memastikan teks Tubing dimulai dari tepi kiri kotaknya */
+.act-header.reverse .act-title {
+    justify-content: flex-start;
+}
+
+/* Membalik posisi Konten (Gambar ke Kiri, Teks ke Kanan) */
+.act-content.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ==========================================================================
+   LAYOUT KHUSUS ATV (3 KOLOM)
+   ========================================================================== */
+.act-header.atv-header .act-title-col {
+    padding-right: 8%; /* Semakin kecil angkanya, akan semakin tertarik ke tengah. (Sebelumnya di Rafting 30%) */
+}
+
+/* Kolom Info Kanan ("Adrenaline Rush") */
+.act-header.atv-header .act-info-col {
+    padding-left: 8%; /* Disamakan 10% agar seimbang jaraknya dengan sisi kiri */
+}
+
+.act-content-atv {
+    display: flex;
+    align-items: stretch; /* KUNCI UTAMA: Memaksa ke-3 kolom sama tinggi */
+    width: 100%;
+    height: 550px; /* Disamakan dengan tinggi Rafting dan Tubing */
+}
+
+/* Kolom Samping (Gambar Kiri & Kanan) - Dikunci 25% */
+.act-atv-side {
+    flex: 0 0 25%; /* Memaksa agar tidak membesar/menyusut dari 25% */
+    width: 25%;
+    height: 100%;  /* Memaksa mengisi penuh tinggi 550px */
+    display: flex;
+    flex-direction: column;
+}
+
+.act-atv-side img {
+    width: 100%;
+    height: 50%; /* Membagi tinggi 550px menjadi 2 untuk gambar atas & bawah */
+    object-fit: cover;
+    display: block;
+}
+
+/* Box Teks Tengah - Dikunci 50% */
+.act-content-atv .act-text-box {
+    flex: 0 0 50%; /* Memaksa agar tidak membesar/menyusut dari 50% */
+    width: 50%;
+    height: 100%;  /* Memaksa mengisi penuh tinggi 550px */
+    padding: 0 8%;
+    /* Sisanya otomatis mewarisi pengaturan .act-text-box dari kode sebelumnya */
+}
+
+/* Responsif Activity Page di dalam Media Query HP */
+@media (max-width: 992px) {
+    .activity-hero-title { font-size: 32px; letter-spacing: 5px; }
+    .activity-section { padding: 40px 20px; }
+    .act-header, .act-header.reverse { flex-direction: column; align-items: flex-start; margin-bottom: 20px; }
+    .act-info, .act-header.reverse .act-info { text-align: left; margin-top: 15px; }
+    .act-content, .act-content.reverse, .act-content-atv { flex-direction: column; height: auto; }
+    .act-images, .act-atv-side { display: flex; flex-direction: column; }
+    .act-images img, .act-atv-side img { height: 250px; }
+    .act-text-box { padding: 40px 20px; }
+    /* Pastikan di layar HP tetap menumpuk lurus ke bawah */
+    .act-header.reverse, .act-content.reverse {
+        flex-direction: column;
+    }
+    .act-header.reverse .act-info-col {
+        padding-right: 0;
+    }
+}
+
+/* ==========================================================================
+   HALAMAN: ALVIA TRACKING TRIP
+   ========================================================================== */
+
+   /* ==========================================================================
+   2. INTRO SECTION (ALVIA TRACKING TRIP)
+   ========================================================================== */
+.tracking-intro {
+    display: flex;
+    max-width: 100%;
+    margin: 100px auto 120px auto; /* Jarak atas 100px, bawah 120px */
+    align-items: center;
+}
+
+.intro-left, .intro-right {
+    flex: 1;
+}
+
+/* Kolom Kiri */
+.intro-left {
+    text-align: center; /* Membuat "Alvia" berada pas di tengah atas "Tracking Trip" */
+}
+
+.intro-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 75px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* Kolom Kanan */
+.intro-right {
+    padding-left: 0%;
+}
+
+.intro-right h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.intro-right p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2.2; /* Spasi antar baris direnggangkan */
+    letter-spacing: 2.5px; /* Spasi antar huruf direnggangkan sesuai gambar */
+    color: #555555;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   3. TIMELINE HEADER (SHORT TRACK)
+   ========================================================================== */
+.tracking-timeline-header {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.timeline-header {
+    text-align: center;
+}
+
+.timeline-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 75px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.timeline-header .subtitle,
+.timeline-header .price {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600; /* Ditebalkan sedikit (Semi-bold) */
+    letter-spacing: 0.15em; /* Diberi jarak agar lega */
+    text-transform: uppercase; /* Memaksa huruf kapital semua */
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+/* CSS MILIK ANDA (Ditambahkan position relative dan overflow) */
+.svg-preview-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    text-align: center;
+    position: relative; /* WAJIB: Agar SVG terkunci di dalam area ini */
+    overflow: hidden;   /* WAJIB: Agar garis yang keluar jalur tidak membuat halaman bisa di-scroll ke samping */
+    width: 100%;
+}
+
+/* CSS MILIK ANDA (Ditambahkan perintah menjadikannya background) */
+.svg-preview-box-7 {
+    display: flex;
+    justify-content: center;
+    transform: translateX(-5%); /* Angka Anda tidak saya sentuh */
+    position: absolute;   /* WAJIB: Ditarik ke belakang agar tidak bertabrakan dengan teks */
+    top: 0;               /* Dimulai persis di batas atas */
+    width: 100%;
+    z-index: 0;           /* Diletakkan di lapisan paling bawah */
+    pointer-events: none; /* Mencegah SVG menghalangi teks untuk di-copy/klik */
+}
+
+.svg-preview-box-8 {
+    display: flex;
+    justify-content: center;
+    transform: translateX(-7%); /* Angka Anda tidak saya sentuh */
+    position: absolute;   /* WAJIB: Ditarik ke belakang agar tidak bertabrakan dengan teks */
+    top: 0;               /* Dimulai persis di batas atas */
+    width: 100%;
+    z-index: 0;           /* Diletakkan di lapisan paling bawah */
+    pointer-events: none; /* Mencegah SVG menghalangi teks untuk di-copy/klik */
+    /* (Nanti kita akan tambahkan absolute juga saat masuk ke konten Long Track) */
+}
+
+
+/* ==========================================================================
+   KONTEN TIMELINE (FOTO & TEKS)
+   ========================================================================== */
+.timeline-content-wrapper {
+    position: relative;
+    z-index: 2; /* Diletakkan di DEPAN garis SVG */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 150px; /* Jarak antara judul "Short Track" turun menuju gambar pertama */
+}
+
+/* Kotak untuk tata letak Foto Kiri & Teks Kanan */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.timeline-item .tl-image {
+    flex: 0 0 45%; /* Foto mengambil 45% ruang */
+    transform: translate(-15%, -15%); /* Menggeser gambar ke KIRI sejauh 40 pixel */
+}
+
+.timeline-item .tl-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.timeline-item .tl-text {
+    flex: 0 0 45%; /* Teks mengambil 45% ruang */
+    text-align: center; /* Rata tengah sesuai referensi gambar Anda */
+    padding: 0 20px;
+    transform: translate(25%, -15%); /* (Geser KANAN sejauh 40px, Geser ATAS sejauh 50px) */
+}
+
+/* --- Tipografi --- */
+.tl-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; /* Sesuai instruksi Anda */
+    font-size: 45px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+.tl-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600; /* SemiBold */
+    color: #555555;   /* Hex 555555 */
+    letter-spacing: 0.1em; /* Sama persis dengan 10% */
+    line-height: 2.2; /* Spasi antar baris */
+    white-space: nowrap;
+}
+
+.timeline-item.reverse .tl-image {
+    transform: translate(10%, 13%);
+}
+
+/* Teks yang berada di kiri didorong semakin ke Kiri (dan tetap naik ke Atas) */
+.timeline-item.reverse .tl-text {
+    transform: translate(-20%, 10%);
+}
+
+.timeline-item.item-school .tl-image {
+    /* Angka pertama: geser Kiri/Kanan (minus = kiri) */
+    /* Angka kedua: geser Atas/Bawah (positif = bawah, minus = atas) */
+    transform: translate(-10%, 35%);
+}
+
+/* Menggeser Teks Sekolah (Kanan) */
+.timeline-item.item-school .tl-text {
+    transform: translate(25%, 35%);
+}
+
+/* Pembungkus khusus konten Long Track */
+.timeline-content-wrapper-8 {
+    position: relative;
+    z-index: 2; /* Diletakkan di DEPAN garis SVG */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 150px; /* Jarak antara garis awal ke foto sungai */
+}
+
+/* Menggeser Teks Sungai (Kiri) */
+.timeline-item.item-river .tl-text {
+    transform: translate(-29%, -15%);
+}
+
+/* Menggeser Gambar Sungai (Kanan) */
+.timeline-item.item-river .tl-image {
+    transform: translate(15%, -5%);
+}
+.timeline-item.item-temple .tl-image {
+    /* Angka pertama: geser Kiri/Kanan (- minus berarti Kiri) */
+    /* Angka kedua: geser Atas/Bawah (+ positif berarti turun ke Bawah) */
+    transform: translate(-15%, 25%);
+}
+
+/* Menggeser Teks Temple (Kanan) */
+.timeline-item.item-temple .tl-text {
+    /* Angka pertama: geser Kanan/Kiri (+ positif berarti Kanan) */
+    /* Angka kedua: geser Atas/Bawah (- minus berarti naik ke Atas) */
+    transform: translate(25%, 30%);
+}
+
+/* ==========================================================================
+   4. DIVIDER & LONG TRACK HEADER
+   ========================================================================== */
+.explore-divider {
+    text-align: center;
+    margin: 60px 0 0 0; /* Jarak atas 80px, bawah 40px */
+    width: 100%;
+    /* TAMBAHKAN 2 BARIS INI: */
+    position: relative;
+    z-index: 5;
+    margin-top: 36%; /* Memastikan teks selalu di depan garis hitam */
+}
+
+.explore-divider h2 {
+    font-family: 'Playfair Display SC', serif; /* Font diubah ke Playfair Display SC */
+    font-size: 75px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 50px;
+    /* letter-spacing bisa Anda atur jika ingin dirapatkan/direnggangkan */
+}
+
+.long-track-header {
+    margin-bottom: 80px;
+    /* TAMBAHKAN 2 BARIS INI: */
+    position: relative;
+    z-index: 5; /* Memastikan teks selalu di depan garis hitam */
+}
+
+/* Judul Extend Your Journey To The Long Track */
+.long-track-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; /* Memastikan font miring / italic */
+    font-size: 75px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+/* Subtitle 4 Hours Duration... */
+.long-track-header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600; /* Inter SemiBold */
+    color: #555555; /* Hex 555555 */
+    letter-spacing: 0.15em; /* 0.15em adalah ekuivalen persis dari 15% di CSS */
+    text-transform: uppercase;
+}
+
+.timeline-finish {
+    text-align: center;
+    margin-top: 36%;    /* Mengatur jarak ujung panah SVG ke tulisan Finish */
+    margin-bottom: 3%; /* Mengatur jarak tulisan Finish ke Footer di bawahnya */
+    width: 100%;
+    /* KUNCI RAHASIA: Jika tulisan "Finish" kurang pas dengan ujung panah karena
+       SVG-nya tadi Anda geser ke kiri, aktifkan dan atur kode di bawah ini: */
+    /* transform: translateX(-20px); */
+}
+
+.timeline-finish h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 75px; /* Ukuran besar elegan. Sesuaikan jika terlalu besar/kecil */
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   HALAMAN: ABOUT & CONTACT
+   ========================================================================== */
+
+/* --- 1. ABOUT HERO SECTION --- */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wadah Utama */
+.about-hero-container {
+    display: flex;
+    width: 100%;
+    max-width: 80%; /* Sedikit dilebarkan agar teks tidak terlalu sesak */
+    justify-content: center;
+    align-items: center; /* KUNCI: Mengizinkan tinggi kotak kiri & kanan berbeda */
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+/* Kotak Kiri (Putih Semi-Transparan) */
+.hero-box.left-box {
+    background-color: rgba(255, 255, 255, 0.75); /* Transparansi elegan */
+    width: 50%;
+    padding: 40px 30px; /* Tinggi lebih pendek dari kotak hitam */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Teks Kiri (Nestled in the tranquil...) */
+.hero-box.left-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Inter Regular */
+    line-height: 2.2; /* Mengatur paragraph spacing yang lega */
+    letter-spacing: 0.1em; /* Setara dengan Letter Spacing 10% */
+    color: #000000;
+    text-align: center;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Efek Drop Shadow pada teks */
+    margin: 0;
+}
+
+/* Kotak Kanan (Hitam Semi-Transparan) */
+.hero-box.right-box {
+    background-color: rgba(0, 0, 0, 0.65); /* Hitam pekat tapi tetap tembus pandang */
+    width: 50%;
+    padding: 80px 50px; /* KUNCI: Padding atas-bawah sangat besar agar kotak menonjol */
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Teks "About Us" */
+.hero-box.right-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700; /* Playfair Display Bold Italic */
+    font-size: 100px; /* Ukuran besar mendominasi */
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* Teks "ALVIA JOGLO HOUSE EXPERIENCE" */
+.hero-box.right-box h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Inter Semi Bold */
+    font-size: 18px;
+    letter-spacing: 0.3em; /* Setara dengan Letter Spacing 20% */
+    margin-bottom: 10%;
+    text-transform: uppercase;
+}
+
+/* Teks "Discover the perfect harmony..." */
+.hero-box.right-box p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Inter Regular */
+    font-size: 16px;
+    line-height: 2.2; /* Mengatur paragraph spacing */
+    letter-spacing: 0.13em; /* Setara dengan Letter Spacing 10% */
+    color: #ffffff;
+}
+
+/* --- 2. BLURRED DESCRIPTION SECTION --- */
+.about-description {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Membuat latar belakang gambar blur dan sedikit gelap */
+.desc-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.desc-container {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 10%;
+    padding: 0 4%;
+}
+
+.desc-column {
+    flex: 1;
+    color: #ffffff;
+}
+
+.desc-column h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8%;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35); /* Efek Drop Shadow */
+    letter-spacing: 0.13em;
+}
+
+.desc-column p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 2.2;
+    font-weight: 400;
+    color: #f5f5f5;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35); /* Efek Drop Shadow */
+}
+
+/* --- 3. CONTACT SECTION --- */
+.contact-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Overlay hitam tebal agar teks terbaca */
+}
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    padding: 0 40px;
+    align-items: center;
+}
+
+.contact-left {
+    flex: 1;
+    color: #ffffff;
+}
+
+.contact-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Inter Bold */
+    letter-spacing: 0.1em; /* Letter spacing 10% */
+    color: #cca43b; /* Warna Emas */
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+/* Teks: Contact Us */
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700; /* Playfair Bold Italic */
+    font-size: 85px;
+    color: #ffffff; /* Putih (hex ffffff) */
+    margin-left: 50px; /* KUNCI: Membuat teks menjorok ke dalam (ke kanan) */
+    margin-bottom: 10px;
+}
+
+/* Garis di Bawah Contact Us */
+.contact-line {
+    width: 60px;
+    height: 3px;
+    background-color: #cca43b;
+    margin-bottom: 40px;
+    /* Tanpa margin-left, sehingga otomatis sejajar di kiri dengan Subtitle */
+}
+
+/* Teks: Ready to explore... */
+.contact-desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Inter Semi Bold */
+    color: #ffffff; /* Putih */
+    letter-spacing: 0.18em; /* Letter spacing 10% */
+    line-height: 2.2; /* Paragraph spacing */
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+/* Layout Info Pembungkus */
+.contact-info-wrapper {
+    display: flex;
+    gap: 40px; /* Jarak antara blok Reach Us dan Social Network */
+}
+
+/* Pemisah Vertikal untuk Social Network */
+.social-block {
+    padding-left: 40px; /* Memberi jarak ke dalam */
+    border-left: 1px solid #cca43b; /* Garis vertikal warna emas redup */
+}
+
+/* Teks: REACH US THROUGH & SOCIAL NETWORK */
+.info-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Inter Semi Bold */
+    color: #ffffff; /* Putih */
+    letter-spacing: 0.15em; /* Letter spacing 10% */
+    font-size: 14px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Ikon Sosial Media dan Kontak */
+.info-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Teks Alamat, Nomor HP, Email (Inter Regular) */
+.info-block ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Inter Regular */
+    letter-spacing: 0.1em; /* Letter spacing 10% */
+    font-size: 13px;
+    line-height: 2em; /* Jarak baris pada alamat yang panjang */
+    color: #ffffff; /* Putih */
+}
+
+.info-block ul li i {
+    color: #cca43b; /* Warna Emas untuk Ikon */
+    font-size: 18px;
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+.info-block ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.info-block ul li a:hover {
+    color: #cca43b;
+    transition: 0.3s;
+}
+
+.contact-right {
+    flex: 1;
+    height: 400px;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
 }

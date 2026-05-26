@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvia Joglo House Experience</title>
+    <title>Alvia Joglo Experience</title>
     <link rel="icon" href="{{ Vite::asset('resources/images/logo-title.jpg') }}" type="image/jpg">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -13,16 +13,16 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo-container">
+        <a href="{{ url('/') }}"  class="logo-container">
             <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Alvia Logo" class="logo-img">
             <span class="logo-text">Experience</span>
-        </div>
+        </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#">ACTIVITY</a></li>
-            <li><a href="#">ALVIA TRACKING TRIP</a></li>
-            <li><a href="#">TOUR ACTIVITY</a></li>
-            <li><a href="#">TRANSPORT</a></li>
-            <li><a href="#">ABOUT & CONTACT</a></li>
+            <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
+            <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+            <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
+            <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
+            <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>
         </ul>
         <div class="hamburger" id="hamburgerMenu">
             <span></span>
@@ -77,24 +77,24 @@
             </div>
 
             <div class="grid-container">
-                <a href="#" class="grid-card card-activity">
+                <a href="{{ url('/activity') }}" class="grid-card card-activity">
                     <img src="{{ Vite::asset('resources/images/menu-activity.png') }}" alt="Activity">
                     <div class="card-top-overlay"><h3>Activity</h3></div>
                 </a>
 
                 <div class="grid-middle-wrapper">
-                    <a href="#" class="grid-card card-tracking">
+                    <a href="{{ url('/tracking') }}" class="grid-card card-tracking">
                         <img src="{{ Vite::asset('resources/images/menu-tracking.png') }}" alt="Tracking">
                         <div class="card-top-overlay"><h3>Tracking</h3></div>
                     </a>
 
-                    <a href="#" class="grid-card card-transport">
+                    <a href="{{ url('/transport') }}" class="grid-card card-transport">
                         <img src="{{ Vite::asset('resources/images/menu-transport.png') }}" alt="Transport">
                         <div class="card-top-overlay"><h3>Transport</h3></div>
                     </a>
                 </div>
 
-                <a href="#" class="grid-card card-tour">
+                <a href="{{ url('/tour') }}" class="grid-card card-tour">
                     <img src="{{ Vite::asset('resources/images/menu_tour.png') }}" alt="Tour">
                     <div class="card-top-overlay"><h3>Tour</h3></div>
                 </a>
@@ -119,7 +119,7 @@
     <footer class="main-footer">
         <div class="footer-container">
 
-            <a href="#" class="footer-column brand-column">
+            <a href="{{ url('/') }}" class="footer-column brand-column">
                 <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Alvia Joglo Logo" class="footer-logo-img">
                 <span class="footer-logo-text">Experience</span>
             </a>
@@ -127,11 +127,11 @@
             <div class="footer-column nav-column">
                 <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-nav-links">
-                    <li><a href="#">ACTIVITY</a></li>
-                    <li><a href="#">ALVIA TRACKING TRIP</a></li>
-                    <li><a href="#">TOUR ACTIVITY</a></li>
-                    <li><a href="#">TRANSPORT</a></li>
-                    <li><a href="#">ABOUT & CONTACT</a></li>
+                    <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
+                    <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+                    <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
+                    <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
+                    <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>
                 </ul>
             </div>
 
