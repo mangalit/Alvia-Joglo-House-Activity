@@ -1583,3 +1583,376 @@ a {
     border-radius: 4px;
     overflow: hidden;
 }
+
+/* ==========================================================================
+   HALAMAN: TOUR ACTIVITY
+   ========================================================================== */
+
+/* --- 1. TOUR HERO & GRID --- */
+/* --- 1. TOUR HERO & GRID --- */
+.tour-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center; /* Memastikan titik fokus selalu di tengah */
+    /* KUNCI: Menghapus background-attachment: fixed; agar gambar tidak over-zoom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 130px; /* Jarak dari atas agar kotak TOUR lebih ke tengah */
+    padding-bottom: 80px;
+}
+
+.tour-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Sedikit diterangkan agar awan candi lebih terlihat */
+    z-index: 1;
+}
+
+/* Kotak Transparan "TOUR" */
+.tour-hero-box-outline {
+    position: relative;
+    z-index: 2;
+    border: 3px solid #ffffff;
+    width: 55%;
+    height: 500px; /* Menggunakan tinggi tetap agar proporsional dengan grid di bawahnya */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-bottom: 20%;
+}
+
+/* Kotak Gelap Dalam */
+.tour-hero-box {
+    position: relative;
+    z-index: 2;
+    width: 96%;
+    height: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Tulisan "TOUR" */
+.tour-hero-title {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    font-size: 100px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    letter-spacing: normal;
+}
+/* Grid 6 Thumbnails */
+.tour-thumb-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15%;
+    max-width: 90%;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.tour-thumb-card {
+    position: relative;
+    aspect-ratio: 1; /* Membuatnya berbentuk kotak sempurna */
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.tour-thumb-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tour-thumb-card:hover img {
+    transform: scale(1.1); /* Efek zoom saat kursor diarahkan */
+}
+
+/* KUNCI: Menghapus gradasi lama, menggantinya dengan kotak solid di judul */
+.tour-thumb-card::after {
+    display: none;
+}
+
+/* Desain kotak teks di bagian bawah thumbnail */
+.thumb-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Kotak solid abu-abu gelap transparan */
+    padding: 15px 0;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700; /* Ditebalkan */
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+/* --- 2. DISCOVER MORE DIVIDER --- */
+.tour-divider {
+    background-color: #1a1a1a;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.tour-divider h2 {
+    font-family: 'Italianno', cursive;
+    font-size: 100px;
+    color: #AC8F57; /* Warna Emas */
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- 3. TOUR DETAIL ROWS (ZIG-ZAG) --- */
+.tour-details-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-row {
+    display: flex;
+    width: 100%;
+    min-height: 500px; /* Tinggi minimum tiap baris */
+}
+
+/* Kelas reverse untuk membalik posisi Teks Kiri & Gambar Kanan */
+.tour-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Kolase Gambar Kiri/Kanan */
+.tour-collage {
+    width: 50%;
+    display: grid;
+    /* Kita gunakan grid 2x2 agar semua gambar mengisi kotak dengan rapi */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.tour-collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Kotak Informasi Teks (Background Cream) */
+/* Kotak Informasi Teks (Background Cream) */
+.tour-info {
+    width: 50%;
+    background-color: #EFECE6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+}
+
+/* Judul (Art Village Tour, dll) */
+.tour-info h3 {
+    font-family: 'Cinzel', serif; /* Font Cinzel */
+    font-size: 50px;
+    font-weight: 400; /* Cinzel Regular */
+    letter-spacing: 2px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Garis Pembatas Bawah Judul */
+.tour-info .info-line {
+    width: 50%;
+    height: 3px;
+    background-color: #AC8F57; /* Warna emas #AC8F57 */
+    margin-bottom: 30px;
+}
+
+/* Daftar Tujuan (Barong & Keris, dll) */
+.tour-info p {
+    font-family: 'Cinzel', serif; /* Font Cinzel */
+    font-size: 20px;
+    font-weight: 500; /* Cinzel Regular */
+    line-height: 1.5;
+    color: #000000;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+/* Waktu Start (-- START AT 8 AM --) */
+.tour-info .start-time {
+    font-family: 'Cinzel', serif; /* Font Cinzel */
+    font-size: 20px;
+    font-weight: 400; /* Cinzel Regular */
+    color: #000000;
+    letter-spacing: 1.5px;
+    margin-bottom: 50px;
+}
+
+/* Harga ($40 USD) */
+.tour-info .price {
+    font-family: 'Cinzel', serif; /* Font Cinzel */
+    font-size: 45px;
+    font-weight: 400; /* Cinzel Regular */
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+/* Tulisan /PAX yang lebih kecil */
+.tour-info .price .pax {
+    font-family: 'Cinzel', serif; /* Font Cinzel */
+    font-size: 20px; /* KUNCI: Ukuran jauh lebih kecil dari harga */
+    font-weight: 400; /* Cinzel Regular */
+    color: #000000;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+
+/* Tombol BOOK NOW */
+.btn-tour-book {
+    background-color: #AC8F57; /* Background warna #AC8F57 */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Cinzel', serif; /* Font Cinzel */
+    font-size: 15px;
+    font-weight: 600; /* Cinzel Regular */
+    letter-spacing: 2px;
+    padding: 12px 35px;
+    border: 1px solid #AC8F57; /* Garis tepi mengikuti warna background */
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Efek Tombol saat di-Hover */
+.btn-tour-book:hover {
+    background-color: transparent; /* Background hilang (transparan) */
+    color: #AC8F57; /* Teks berubah menjadi warna emas */
+}
+
+/* ==========================================================================
+   HALAMAN: TRANSPORT
+   ========================================================================== */
+
+/* --- 1. TRANSPORT SERVICE (KOTAK TENGAH) --- */
+.transport-service-section {
+    background-color: #ffffff;
+    padding: 100px 20px 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.ts-container {
+    background-color: #EFECE6; /* Warna cream seragam dengan tour-info */
+    border: 1px solid #AC8F57; /* Bingkai emas */
+    max-width: 65%;
+    width: 100%;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.ts-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.ts-line {
+    width: 50%;
+    height: 2px;
+    background-color: #AC8F57;
+    margin: 0 auto 30px auto;
+}
+
+.ts-header .route {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+/* Bungkus Harga Kiri dan Kanan */
+.ts-pricing-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ts-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ts-card h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.ts-card .price {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* Garis Pemisah Vertikal di antara Drop & Pick Up */
+.ts-divider {
+    width: 1px;
+    height: 120px;
+    background-color: rgba(172, 143, 87, 0.4); /* Emas transparan */
+    margin: 0 40px;
+}
+
+/* --- 2. VEHICLE RENT (FOTO) --- */
+/* Layout teks sudah diwarisi dari .tour-info milik halaman Tour */
+
+.transport-image {
+    width: 50%;
+    overflow: hidden;
+}
+
+.transport-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.transport-image:hover img {
+    transform: scale(1.05); /* Efek zoom elegan */
+}
+
+/* Responsif untuk Transport Service di Layar HP */
+@media (max-width: 768px) {
+    .ts-pricing-wrapper {
+        flex-direction: column;
+    }
+    .ts-divider {
+        width: 100px;
+        height: 1px;
+        margin: 40px 0;
+    }
+}

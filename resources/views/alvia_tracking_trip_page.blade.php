@@ -33,7 +33,7 @@
     </nav>
 
 <!-- HERO SECTION (Menggunakan style dari Activity) -->
-    <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/tracking-hero.png') }}');">
+    <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/tracking-hero.jpg') }}');">
         <div class="activity-hero-overlay"></div>
         <div class="activity-hero-box-outline">
             <div class="activity-hero-box">

@@ -125,8 +125,8 @@
                         <h4>REACH US THROUGH</h4>
                         <ul>
                             <li><i class="bi bi-geo-alt-fill"></i> <span>Tampaksiring<br>Gianyar<br>Bali, Indonesia 80552</span></li>
-                            <li><i class="bi bi-telephone-fill"></i> <span>+62 878-9903-0306</span></li>
-                            <li><i class="bi bi-envelope-fill"></i> <span>alviajoglohouse@gmail.com</span></li>
+                            <li><a href="#"><i class="bi bi-telephone-fill"></i> <span>+62 878-9903-0306</span></a></li>
+                            <li><a href="#"><i class="bi bi-envelope-fill"></i> <span>alviajoglohouse@gmail.com</span></a></li>
                         </ul>
                     </div>
 
