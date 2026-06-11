@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Activity;
+
 class ActivityController extends Controller
 {
     public function activity()
     {
-        return view('activity_page');
+        $activities = Activity::all();
+        return view('activity_page', compact('activities'));
     }
 }

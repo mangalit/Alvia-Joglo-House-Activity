@@ -600,69 +600,297 @@ a {
 /* ==========================================================================
    7. RESPONSIVE MEDIA QUERIES (HP & TABLET)
    ========================================================================== */
+@media (max-width: 1024px) {
+    .navbar { padding: 10px 30px; }
+    .hero-box.right-box h2 { font-size: 80px; }
+    .tour-hero-title, .activity-hero-title { font-size: 80px; }
+    .ts-container { max-width: 90%; }
+}
+
 @media (max-width: 992px) {
-    .experience-container {
-        flex-direction: column;
-    }
-    .experience-text {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    .grid-container {
-        width: 100%;
-    }
+    .experience-container { flex-direction: column; }
+    .experience-text { width: 100%; text-align: center; margin-bottom: 30px; }
+    .experience-title { font-size: 48px; }
+    .grid-container { width: 100%; }
+
+    .act-header { flex-direction: column; text-align: center !important; gap: 20px; }
+    .act-title-col, .act-info-col { flex: none; width: 100%; padding: 0 !important; text-align: center !important; }
+    .act-title { justify-content: center !important; font-size: 50px; }
+    .act-info-col h3 { margin-top: 0; font-size: 32px; }
+
+    .about-hero-container { max-width: 95%; flex-direction: column; }
+    .hero-box.left-box, .hero-box.right-box { width: 100%; }
+
+    .tour-thumb-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .tour-row, .tour-row.reverse { flex-direction: column; min-height: auto; }
+    .tour-collage, .tour-info { width: 100%; }
 }
 
 @media (max-width: 768px) {
-    /* Navbar HP */
+    /* Global Reset for Mobile */
+    body { font-size: 14px; }
+
+/* ==============================================
+       Navbar HP (Desain Dropdown Klasik)
+       ============================================== */
     .navbar {
-        padding: 15px 20px;
-    }
+    padding: 15px 20px;
+    position: sticky !important; /* KUNCI: Dikembalikan ke sticky agar ikut saat di-scroll */
+    top: 0;
+    z-index: 999;
+}
+    .logo-text { font-size: 30px; }
+    .logo-img { height: 35px; }
+
+    /* Tombol Hamburger */
     .hamburger {
         display: flex;
+        padding: 6px;
+        border: 1px solid transparent; /* Persiapan untuk bingkai */
+        border-radius: 4px;
+        transition: all 0.3s ease;
     }
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        background-color: rgba(51, 51, 51, 0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: right 0.4s ease-in-out;
-        z-index: 12;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-    }
-    .nav-links.active {
-        right: 0;
-    }
+
+    /* Animasi Silang (X) dengan Bingkai Kotak persis seperti gambar */
     .hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
     .hamburger.toggle span:nth-child(2) { opacity: 0; }
     .hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
-    /* Hero Teks Mobile */
-    .hero-content { margin-top: 5vh; }
-    .main-title { font-size: 42px; letter-spacing: 3px; }
-    .sub-title { font-size: 42px; }
-    .description { font-size: 13px; }
+    /* Wadah Menu (Dropdown ke bawah) */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Turun tepat di bawah header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* Background putih bersih */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Bayangan lembut ke bawah */
 
-    /* Area Lainnya di Mobile */
-    .about-container { flex-direction: column; gap: 30px; }
-    .about-section { padding: 60px 20px; }
-    .grid-container { flex-direction: column; }
-    .card-activity, .card-tour, .grid-middle-wrapper { width: 100%; }
-    .card-activity, .card-tour { height: 300px; }
-    .card-tracking, .card-transport { height: 180px; }
+        /* Animasi turun (Accordion) */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        z-index: 998;
+    }
+
+    /* Saat menu terbuka */
+    .nav-links.active {
+        max-height: 400px; /* Cukup tinggi untuk menampung semua menu */
+    }
+
+    /* List Menu (Garis pembatas tiap baris) */
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #AC8F57; /* Garis abu-abu elegan */
+    }
+
+    /* Menghilangkan garis di menu paling bawah */
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    /* Gaya Teks Menu */
+    .nav-links a {
+        display: block; /* Agar bisa diklik di seluruh area baris */
+        width: 100%;
+        padding: 18px 20px;
+        font-family: 'Cinzel', serif; /* Font klasik sesuai gambar */
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #222222 !important; /* Teks hitam gelap */
+        text-align: left;
+        letter-spacing: 1px;
+    }
+
+    /* Efek saat menu ditahan/disentuh */
+    .nav-links a:hover,
+    .nav-links a:active {
+        background-color: #f5f5f5;
+        color: #AC8F57 !important; /* Berubah jadi warna emas Alvia */
+    }
+
+    /* Hero Section */
+    .hero-section { height: 80vh; }
+    .main-title { font-size: 45px; margin-top: 20px; margin-bottom: 10px; }
+    .sub-title { font-size: 45px; margin-bottom: 30px; }
+    .description { font-size: 14px; max-width: 100%; padding: 0 10px; }
+
+    /* Hide awkward line breaks on mobile */
+    .description br, .intro-right p br, .tl-text p br, .hero-box p br, .desc-column p br {
+        display: none;
+    }
+
+    /* About Section (Landing) */
+    .about-container { flex-direction: column; }
+    .about-box {
+        margin-top: 0;
+        border-radius: 0;
+        padding: 50px 20px;
+        text-align: left;
+    }
+    .about-box:first-child { border-radius: 30px 30px 0 0; margin-top: -40px; }
+    .dropcap { font-size: 40px; line-height: 40px; }
+
+    /* Experience Grid */
     .experience-section { padding: 60px 20px; }
-    .gallery-container { flex-direction: column; }
-    .gallery-item { height: 200px; }
-    .gallery-section { padding: 0 20px 60px 20px; }
-    .footer-container { flex-direction: column; gap: 40px; }
+    .grid-container { flex-direction: column; gap: 20px; }
+    .card-activity, .card-tour, .grid-middle-wrapper { width: 100%; height: auto; }
+    .grid-card img { height: 250px; }
+    .card-transport { height: 200px; }
+
+    /* Activity Page */
+    .activity-hero { height: 50vh; min-height: 350px; }
+    .activity-hero-box-outline { width: 90%; height: 80%; border-width: 2px; }
+    .activity-hero-title { font-size: 40px !important; letter-spacing: 5px; }
+
+    .act-header { padding: 0 20px; margin-bottom: 40px; gap: 10px; }
+    .act-title { font-size: 36px !important; justify-content: center !important; }
+    .thin-dash { width: 30px; margin-right: 10px; }
+    .act-info-col h3 { font-size: 24px !important; margin-top: 10px; margin-bottom: 5px; text-align: center !important; }
+    .act-info-col .min-book { margin-bottom: 10px; font-size: 11px; letter-spacing: 2px; text-align: center !important; }
+    .act-info-col .price { font-size: 14px; text-align: center !important; }
+
+    .act-content, .act-content.reverse, .act-content-atv {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .act-text-box {
+        width: 100%;
+        padding: 60px 25px;
+        flex: none;
+        height: auto;
+        min-height: 300px;
+    }
+    .act-text-box h4 { font-size: 28px; margin-bottom: 15px; }
+    .act-text-box p { font-size: 15px; line-height: 1.6; margin-bottom: 25px; }
+
+    /* Keep the grid feel for images even on mobile */
+    .act-images {
+        width: 100% !important;
+        flex: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 400px; /* Reduced fixed height to keep it tight */
+    }
+    .act-images img { height: 100%; }
+
+    /* Special handling for ATV 3-column layout on mobile */
+    .act-atv-side {
+        width: 100% !important;
+        height: 200px;
+        flex-direction: row !important;
+    }
+    .act-atv-side img {
+        width: 50%;
+        height: 100%;
+    }
+    .act-content-atv .act-text-box { order: 2; }
+    .act-atv-side:first-child { order: 1; }
+    .act-atv-side:last-child { order: 3; }
+
+    /* Tracking Page */
+    .tracking-intro { flex-direction: column; margin: 60px 0; padding: 0 20px; }
+    .intro-left h2, .intro-right h3, .timeline-header h2, .explore-divider h2, .long-track-header h2, .timeline-finish h2 {
+        font-size: 38px !important; white-space: normal !important;
+    }
+    .intro-right p, .tl-text p { font-size: 14px; white-space: normal; letter-spacing: 1px; }
+
+    .timeline-content-wrapper, .timeline-content-wrapper-8 { padding-top: 50px; }
+    .timeline-item, .timeline-item.reverse {
+        flex-direction: column !important;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    .timeline-item .tl-image, .timeline-item .tl-text {
+        width: 100% !important;
+        flex: none !important;
+        transform: none !important;
+        padding: 0 20px;
+    }
+    .tl-text h3 { font-size: 28px !important; margin: 20px 0; white-space: normal; }
+    .tl-text p { line-height: 1.6; }
+    .timeline-item .tl-image { margin-bottom: 20px; }
+
+    .svg-preview-box-7, .svg-preview-box-8 { display: none; } /* Hide complex SVG on mobile */
+    .explore-divider, .timeline-finish { margin-top: 40px; margin-bottom: 20px; }
+
+    /* Tour Page */
+    .tour-hero-section { padding-top: 100px; min-height: 70vh; }
+    .tour-hero-box-outline { width: 85%; height: 300px; margin-bottom: 40px; }
+    .tour-hero-title { font-size: 45px; }
+    .tour-thumb-container { grid-template-columns: 1fr; gap: 30px; max-width: 85%; }
+    .thumb-title { font-size: 24px; padding: 10px 0; }
+    .tour-divider h2 { font-size: 60px; }
+
+    .tour-info h3 { font-size: 32px; }
+    .tour-info p, .tour-info .start-time { font-size: 16px; }
+    .tour-info .price { font-size: 32px; }
+
+    .tour-collage { grid-template-columns: 1fr 1fr; }
+    .tour-collage img { height: 150px; }
+
+    /* About & Contact Page */
+    .about-hero { height: auto; min-height: auto; padding: 100px 0 60px 0; }
+    .hero-box.right-box h2 { font-size: 45px; }
+    .hero-box.right-box h3 { font-size: 14px; letter-spacing: 2px; }
+    .hero-box.left-box p, .hero-box.right-box p { font-size: 14px; line-height: 1.8; }
+
+    .desc-container { flex-direction: column; gap: 40px; }
+    .desc-column h4 { font-size: 18px; margin-bottom: 15px; }
+    .desc-column p { font-size: 16px; line-height: 1.8; }
+
+    .contact-container { flex-direction: column; gap: 40px; padding: 0 20px; }
+    .contact-title { font-size: 45px; margin-left: 0; text-align: center; }
+    .contact-line { margin: 0 auto 30px auto; }
+    .contact-desc { text-align: center; font-size: 14px; }
+    .contact-info-wrapper { flex-direction: column; gap: 30px; }
+    .social-block { padding-left: 0; border-left: none; border-top: 1px solid #cca43b; padding-top: 30px; }
+    .contact-right { height: 300px; width: 100%; }
+
+    /* Transport Page */
+    .ts-container { padding: 40px 20px; }
+    .ts-header h2 { font-size: 32px; }
+    .ts-header .route { font-size: 14px; }
+    .ts-pricing-wrapper { flex-direction: column; gap: 30px; }
+    .ts-divider { width: 60px; height: 1px; margin: 10px 0; }
+    .ts-card .price { font-size: 28px; }
+
+    .transport-image { width: 100%; height: 250px; }
+
+    /* Landing Page Specifics */
+    .submit-review-container { padding: 40px 20px !important; }
+    .submit-review-container form div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    .rating-header h2 { font-size: 28px !important; }
+    .category-tabs { flex-wrap: wrap; gap: 15px !important; }
+    .overall-rating-dashboard h3 { font-size: 24px !important; }
+
+    /* Footer */
+    .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 40px; }
+    .footer-column { width: 100% !important; }
+    .nav-column .footer-nav-links { margin: 0 auto; }
+    .footer-heading { font-size: 22px; margin-bottom: 20px; }
     .main-footer { padding: 60px 20px; }
+    .footer-logo-text { font-size: 40px; }
 }
+
+@media (max-width: 480px) {
+    .main-title, .sub-title { font-size: 36px; }
+    .logo-text { font-size: 26px; }
+    .activity-hero-title, .tour-hero-title, .hero-box.right-box h2 { font-size: 36px !important; }
+    .act-title { font-size: 32px !important; }
+    .act-text-box h4 { font-size: 28px; }
+    .tour-info h3 { font-size: 26px; }
+    .ts-header h2 { font-size: 28px; }
+}
+
 
 /* ==========================================================================
    8. ACTIVITY PAGE (NEW)
@@ -1954,5 +2182,271 @@ a {
         width: 100px;
         height: 1px;
         margin: 40px 0;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIF ACTIVITY PAGE (HP) - SEMUA LAYOUT SERAGAM (UPDATE TERBARU)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .activity-section {
+        padding: 0 !important; /* Menghilangkan jarak siluman 40px di atas Rafting */
+    }
+
+    .activity-container {
+        margin-bottom: 0 !important; /* Memastikan tidak ada jarak bocor di antara aktivitas */
+    }
+    /* 1. Header (Judul & Harga) Putih Rata Tengah */
+    .activity-hero {
+        width: 100% !important;
+        height: 100vw !important; /* KUNCI: Tinggi disamakan dengan lebar layar (1:1) */
+        min-height: auto !important; /* Membatalkan tinggi minimum bawaan */
+        max-height: 450px !important; /* Batas aman agar tidak terlalu raksasa di tablet */
+    }
+
+    .activity-hero-box-outline {
+        width: 75% !important; /* Lebar bingkai putih */
+        height: 75% !important; /* Tinggi bingkai putih (dibuat sama agar bingkainya juga persegi) */
+    }
+    .act-header,
+    .act-header.reverse,
+    .act-header.atv-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 40px 20px 20px 20px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .act-title-col,
+    .act-header.reverse .act-title-col,
+    .act-header.atv-header .act-title-col {
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .act-title {
+        justify-content: center !important;
+        font-size: 50px !important;
+    }
+
+    .thin-dash {
+        width: 40px !important;
+        margin-right: 15px !important;
+    }
+
+    .act-info-col,
+        .act-header.reverse .act-info-col,
+        .act-header.atv-header .act-info-col {
+        width: 100% !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+
+    .act-info-col h3 {
+        margin-top: 15px !important;
+        font-size: 32px !important;
+    }
+
+    .act-info-col .min-book,
+    .act-info-col .price {
+        white-space: normal !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 2. Box Gelap (Rafting Adventure) dan Kumpulan Gambar */
+    .act-content,
+    .act-content.reverse,
+    .act-content-atv {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    /* KUNCI: Memastikan Box Gelap SELALU di urutan ATAS */
+.act-text-box {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important; /* KUNCI 1: Memaksa bentuk kotak rasio 1:1 (persegi sempurna) */
+        height: auto !important;
+        padding: 20px 25px !important; /* KUNCI 2: Mengurangi jarak atas-bawah secara drastis */
+        justify-content: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Penyesuaian ukuran font agar teks muat dengan indah di dalam kotak persegi */
+    .act-text-box h4 {
+        font-size: 32px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .act-text-box p {
+        font-size: 14px !important; /* Dikecilkan sedikit agar paragraf tidak menabrak batas kotak */
+        line-height: 1.6 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* 3. Susunan Gambar Vertikal 1 Kolom (Membatalkan Grid) */
+    .act-images {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        order: 2 !important; /* Memaksa ke urutan kedua (di bawah teks gelap) */
+    }
+
+    .act-images img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: cover !important;
+    }
+
+    /* 4. Perbaikan Khusus ATV agar formatnya ikut Box Gelap -> Gambar */
+    .act-atv-side {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        order: 2 !important; /* Semua gambar ATV dipaksa turun ke bawah teks */
+    }
+
+    .act-atv-side img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+    .act-content-atv .act-text-box {
+        order: 1 !important;
+    }
+
+    /* 2. Memaksa SEMUA blok gambar ATV (baik yang di kiri maupun kanan pada versi laptop)
+          untuk turun ke urutan nomor 2 dan menumpuk ke bawah */
+    .act-content-atv .act-atv-side,
+    .act-content-atv .act-atv-side:first-child,
+    .act-content-atv .act-atv-side:last-child {
+        order: 2 !important;
+        display: flex !important;
+        flex-direction: column !important; /* Numpuk ke bawah, bukan ke samping */
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 3. Memastikan setiap gambar ATV tampil penuh secara presisi */
+    .act-content-atv .act-atv-side img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: cover !important;
+    }
+
+    .act-header,
+    .act-header.reverse,
+    .act-header.atv-header {
+        padding: 30px 20px 20px 20px !important; /* Atas 50px, Kiri-Kanan 20px, Bawah 40px */
+    }
+
+    /* 2. Ukuran Judul Utama ("- Rafting") */
+    .act-title {
+        font-family: 'Playfair Display', serif !important; /* Memaksa font Playfair */
+        font-style: italic !important; /* Memaksa gaya miring (italic) */
+        font-size: 55px !important;
+    }
+
+    /* 3. Ukuran Sub-Judul ("Outdoor Action") */
+    .act-info-col h3 {
+        font-family: 'Playfair Display', serif !important; /* Memaksa font Playfair */
+        font-style: italic !important; /* Memaksa gaya miring (italic) */
+        font-size: 32px !important;
+        margin-top: 15px !important;
+        margin-bottom: 30px !important; /* Jarak menuju tulisan Minimum Booking */
+    }
+
+    /* 4. Ukuran Teks "MINIMUM BOOKING..." */
+    .act-info-col .min-book {
+        font-size: 13px !important;
+        letter-spacing: 2.5px !important; /* Merenggangkan jarak antar huruf */
+        color: #333333 !important; /* Warna abu-abu agar tidak terlalu mencolok */
+        margin-bottom: 30px !important; /* Jarak menuju harga */
+    }
+
+    /* 5. Ukuran Teks Harga ("Enjoy the river...") */
+    .act-info-col .price {
+        font-size: 15px !important;
+        margin-bottom: 10px !important;
+        color: #333333 !important;
+    }
+}
+
+/* ==========================================================================
+   HALAMAN ABOUT & CONTACT (HERO MOBILE FULL WIDTH - KOTAK SUSUN PAS TEKS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 0 !important;
+        height: 100vh !important; /* Menjaga gambar background tetap full selayar */
+        min-height: 100vh !important;
+        align-items: flex-start !important; /* KUNCI: Menarik semua kotak menempel ke atas layar */
+    }
+
+    .about-hero-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* 1. KOTAK GELAP ("About Us") - Di Atas */
+    .hero-box.right-box {
+        order: 1 !important;
+        width: 100% !important;
+        height: auto !important; /* KUNCI: Tinggi menyesuaikan teks di dalamnya */
+        padding: 20px 20px 40px 20px !important;
+        background: rgba(30, 30, 30, 0.85) !important; /* Warna gelap pekat transparan merata */
+        justify-content: flex-start !important;
+    }
+
+    .hero-box.right-box h2 {
+        font-size: 65px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .hero-box.right-box h3 {
+        font-size: 11px !important;
+        letter-spacing: 4px !important;
+        line-height: 1.8 !important;
+        margin-bottom: 25px !important;
+    }
+
+    .hero-box.right-box p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 2px !important; /* Dihapus agar tidak ada sisa jarak di bawah teks */
+    }
+
+    /* 2. KOTAK TERANG (Deskripsi) - Di Bawah */
+    .hero-box.left-box {
+        order: 2 !important;
+        display: flex !important; /* Memunculkan kembali kotak putih */
+        width: 100% !important;
+        height: auto !important; /* KUNCI: Tinggi menyesuaikan teks di dalamnya */
+        padding: 40px 25px !important; /* Jarak padding dirapatkan agar memeluk teks */
+        background-color: rgba(255, 255, 255, 0.65) !important; /* Putih transparan */
+        backdrop-filter: blur(5px) !important; /* Efek kaca */
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+
+    .hero-box.left-box p {
+        font-size: 13px !important;
+        line-height: 1.8 !important;
+        color: #000000 !important; /* Teks hitam */
+        margin-bottom: 0 !important; /* Dihapus agar kotak langsung berhenti setelah teks */
+        text-align: center !important;
     }
 }

@@ -42,144 +42,53 @@
 
     <section class="activity-section">
 
+        @foreach($activities as $activity)
         <div class="activity-container">
-            <div class="act-header">
+            <div class="act-header {{ $activity->is_reverse ? 'reverse' : '' }} {{ $activity->name == 'ATV Ride' ? 'atv-header' : '' }}">
                 <div class="act-title-col">
-                    <h2 class="act-title"><span class="thin-dash"></span>Rafting</h2>
+                    <h2 class="act-title"><span class="thin-dash"></span>{{ $activity->name }}</h2>
                 </div>
                 <div class="act-info-col">
-                    <h3>Outdoor Action</h3>
-                    <p class="min-book">MINIMUM BOOKING 2 HOURS BEFORE</p>
-                    <p class="price">Enjoy the river adventure for Rp <strong>900k</strong> / pax</p>
+                    <h3>{{ $activity->category }}</h3>
+                    <p class="min-book">{{ $activity->min_booking_info }}</p>
+                    <p class="price">{!! preg_replace('/(\d[\d.]*k)/', '<strong>$1</strong>', $activity->price_info) !!}</p>
                 </div>
             </div>
 
-            <div class="act-content">
-                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/rafting-bg.png') }}');">
-                    <h4>Rafting Adventure</h4>
-                    <p>Immerse yourself in the thrill of nature with our exhilarating river rafting experience. Navigate through refreshing rapids while being surrounded by lush tropical jungles and breathtaking landscapes. Guided by our professionals, this adventure promises a perfect blend of excitement and safety, creating unforgettable memories during your holiday.</p>
-                    <a href="#" class="act-btn">BOOK NOW</a>
-                </div>
-                <div class="act-images">
-                    <img src="{{ Vite::asset('resources/images/rafting-1.png') }}" alt="Rafting 1">
-                    <img src="{{ Vite::asset('resources/images/rafting-2.png') }}" alt="Rafting 2">
-                    <img src="{{ Vite::asset('resources/images/rafting-3.png') }}" alt="Rafting 3">
-                    <img src="{{ Vite::asset('resources/images/rafting-4.png') }}" alt="Rafting 4">
-                </div>
-            </div>
-        </div>
-
-        <div class="activity-container">
-            <div class="act-header reverse">
-                <div class="act-title-col">
-                    <h2 class="act-title"><span class="thin-dash"></span>Tubing</h2>
-                </div>
-                <div class="act-info-col">
-                    <h3>Water Leisure</h3>
-                    <p class="min-book">MINIMUM BOOKING 2 HOURS BEFORE</p>
-                    <p class="price">Enjoy the relaxing river ride for Rp <strong>500k</strong> / pax</p>
-                </div>
-            </div>
-
-            <div class="act-content reverse">
-                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/tubing-bg.png') }}');">
-                    <h4>River Tubing</h4>
-                    <p>Float along the gentle currents and embrace the tranquility of Bali's hidden waterways with our river tubing experience. Drift peacefully through lush canyons and crystal-clear streams, allowing the soothing sounds of nature to wash away your stress. This relaxing yet captivating journey is the perfect way to connect with the island's pristine environment at your own pace.</p>
-                    <a href="#" class="act-btn">BOOK NOW</a>
-                </div>
-                <div class="act-images">
-                    <img src="{{ Vite::asset('resources/images/tubing-1.png') }}" alt="Tubing 1">
-                    <img src="{{ Vite::asset('resources/images/tubing-2.png') }}" alt="Tubing 2">
-                    <img src="{{ Vite::asset('resources/images/tubing-3.png') }}" alt="Tubing 3">
-                    <img src="{{ Vite::asset('resources/images/tubing-4.png') }}" alt="Tubing 4">
-                </div>
-            </div>
-        </div>
-
-        <div class="activity-container">
-            <div class="act-header atv-header">
-                <div class="act-title-col">
-                    <h2 class="act-title"><span class="thin-dash"></span> ATV Ride</h2>
-                </div>
-                <div class="act-info-col">
-                    <h3>Adrenaline Rush</h3>
-                    <p class="min-book">MINIMUM BOOKING 2 HOURS BEFORE</p>
-                    <p class="price">Explore the track for Rp <strong>1.200k</strong>(single) or <strong>1.600k</strong>(tandem)</p>
-                </div>
-            </div>
-
+            @if($activity->name == 'ATV Ride')
             <div class="act-content-atv">
                 <div class="act-atv-side">
-                    <img src="{{ Vite::asset('resources/images/atv-1.png') }}" alt="ATV 1">
-                    <img src="{{ Vite::asset('resources/images/atv-2.png') }}" alt="ATV 2">
+                    @if(isset($activity->images[0])) <img src="{{ Vite::asset('resources/images/' . $activity->images[0]) }}" alt="{{ $activity->name }} 1"> @endif
+                    @if(isset($activity->images[1])) <img src="{{ Vite::asset('resources/images/' . $activity->images[1]) }}" alt="{{ $activity->name }} 2"> @endif
                 </div>
 
-                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/atv-bg.png') }}');">
-                    <h4>ATV Ride Tour</h4>
-                    <p>Gear up for an adrenaline-pumping journey through Bali's rugged terrains and lush landscapes with our ATV ride experience. Conquer challenging dirt trails, navigate through traditional villages, and immerse yourself in the island's untouched natural beauty. Suitable for both beginners and experienced riders, this thrilling adventure offers a unique and exhilarating way to explore the great outdoors.</p>
+                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/' . $activity->bg_image) }}');">
+                    <h4>{{ $activity->card_title }}</h4>
+                    <p>{{ $activity->description }}</p>
                     <a href="#" class="act-btn">BOOK NOW</a>
                 </div>
 
                 <div class="act-atv-side">
-                    <img src="{{ Vite::asset('resources/images/atv-3.png') }}" alt="ATV 3">
-                    <img src="{{ Vite::asset('resources/images/atv-4.png') }}" alt="ATV 4">
+                    @if(isset($activity->images[2])) <img src="{{ Vite::asset('resources/images/' . $activity->images[2]) }}" alt="{{ $activity->name }} 3"> @endif
+                    @if(isset($activity->images[3])) <img src="{{ Vite::asset('resources/images/' . $activity->images[3]) }}" alt="{{ $activity->name }} 4"> @endif
                 </div>
             </div>
-        </div>
-
-        <div class="activity-container">
-            <div class="act-header reverse">
-                <div class="act-title-col">
-                    <h2 class="act-title"><span class="thin-dash"></span>Cycling</h2>
-                </div>
-                <div class="act-info-col">
-                    <h3>Rural Discovery</h3>
-                    <p class="min-book">MINIMUM BOOKING 2 HOURS BEFORE</p>
-                    <p class="price">Enjoy the scenic countryside ride for Rp <strong>500k</strong> / pax</p>
-                </div>
-            </div>
-
-            <div class="act-content reverse">
-                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/tubing-bg.png') }}');">
-                    <h4>Village Cycling</h4>
-                    <p>Pedal your way through the serene heart of Bali and discover its hidden gems at a leisurely pace. Glide past sweeping rice terraces, ancient temples, and vibrant local villages where you can witness the authentic daily life of the island. This eco-friendly journey offers a peaceful yet engaging way to breathe in the fresh countryside air and connect deeply with nature.</p>
+            @else
+            <div class="act-content {{ $activity->is_reverse ? 'reverse' : '' }}">
+                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/' . $activity->bg_image) }}');">
+                    <h4>{{ $activity->card_title }}</h4>
+                    <p>{{ $activity->description }}</p>
                     <a href="#" class="act-btn">BOOK NOW</a>
                 </div>
                 <div class="act-images">
-                    <img src="{{ Vite::asset('resources/images/tubing-1.png') }}" alt="Tubing 1">
-                    <img src="{{ Vite::asset('resources/images/tubing-2.png') }}" alt="Tubing 2">
-                    <img src="{{ Vite::asset('resources/images/tubing-3.png') }}" alt="Tubing 3">
-                    <img src="{{ Vite::asset('resources/images/tubing-4.png') }}" alt="Tubing 4">
+                    @foreach($activity->images as $image)
+                        <img src="{{ Vite::asset('resources/images/' . $image) }}" alt="{{ $activity->name }}">
+                    @endforeach
                 </div>
             </div>
+            @endif
         </div>
-
-        <div class="activity-container">
-            <div class="act-header">
-                <div class="act-title-col">
-                    <h2 class="act-title"><span class="thin-dash"></span>Swing</h2>
-                </div>
-                <div class="act-info-col">
-                    <h3>Iconic Experience</h3>
-                    <p class="min-book">MINIMUM BOOKING 2 HOURS BEFORE</p>
-                    <p class="price">Soar above the lush jungle canopy for Rp <strong>450k</strong> / pax</p>
-                </div>
-            </div>
-
-            <div class="act-content">
-                <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/rafting-bg.png') }}');">
-                    <h4>The Iconic Swing</h4>
-                    <p>Elevate your Bali getaway with our iconic jungle swing experience. Soar high above the lush tropical canopy and take in breathtaking panoramic views of the surrounding valleys and verdant rice terraces. Feel the exhilarating rush of the wind as you capture unforgettable, picture perfect moments suspended beautifully in the heart of nature.</p>
-                    <a href="#" class="act-btn">BOOK NOW</a>
-                </div>
-                <div class="act-images">
-                    <img src="{{ Vite::asset('resources/images/rafting-1.png') }}" alt="Rafting 1">
-                    <img src="{{ Vite::asset('resources/images/rafting-2.png') }}" alt="Rafting 2">
-                    <img src="{{ Vite::asset('resources/images/rafting-3.png') }}" alt="Rafting 3">
-                    <img src="{{ Vite::asset('resources/images/rafting-4.png') }}" alt="Rafting 4">
-                </div>
-            </div>
-        </div>
+        @endforeach
 
     </section>
 

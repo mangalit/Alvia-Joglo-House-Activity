@@ -49,12 +49,9 @@
 
         <!-- Grid 6 Destinasi -->
         <div class="tour-thumb-container">
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/tour-art.jpg') }}" alt="Art Village"><div class="thumb-title">Art Village</div></div>
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/tour-ubud.jpg') }}" alt="Ubud"><div class="thumb-title">Ubud</div></div>
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/tour-east.png') }}" alt="East Coast"><div class="thumb-title">East Coast Bali</div></div>
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/tour-west.jpg') }}" alt="West Bali"><div class="thumb-title">West Bali</div></div>
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/tour-south.jpg') }}" alt="South Bali"><div class="thumb-title">South Bali</div></div>
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/tour-north.jpg') }}" alt="North Bali"><div class="thumb-title">North Bali</div></div>
+            @foreach($tours as $tour)
+            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/' . $tour->main_image) }}" alt="{{ $tour->name }}"><div class="thumb-title">{{ $tour->name }}</div></div>
+            @endforeach
         </div>
     </header>
 
@@ -69,151 +66,26 @@
          3. TOUR DETAIL ROWS (ZIG-ZAG)
          ========================================================= -->
     <section class="tour-details-wrapper">
-        <!-- BARIS 1: Art Village (Gambar Kiri, Teks Kanan) -->
-        <div class="tour-row">
+        @foreach($tours as $tour)
+        <!-- BARIS: {{ $tour->name }} -->
+        <div class="tour-row {{ $tour->is_reverse ? 'reverse' : '' }}">
             <div class="tour-collage">
-                <img src="{{ Vite::asset('resources/images/tour-art.jpg') }}" alt="Art">
-                <img src="{{ Vite::asset('resources/images/art-2.jpg') }}" alt="Art">
-                <img src="{{ Vite::asset('resources/images/art-3.jpg') }}" alt="Art">
-                <img src="{{ Vite::asset('resources/images/art-4.jpg') }}" alt="Art">
+                @foreach($tour->images as $image)
+                    <img src="{{ Vite::asset('resources/images/' . $image) }}" alt="{{ $tour->name }}">
+                @endforeach
             </div>
             <div class="tour-info">
-                <h3>Art Village Tour</h3>
+                <h3>{{ $tour->name }}</h3>
                 <div class="info-line"></div>
                 <p>
-                    Barong & Keris Dance<br>
-                    Gold & Silver Smith Production<br>
-                    Coffee Plantation<br>
-                    Painting<br>
-                    Wood carving
+                    {!! nl2br(e($tour->description)) !!}
                 </p>
-                <div class="start-time">-- START AT 8 AM --</div>
-                <div class="price">$40 USD<span class="pax">/Pax</span></div>
+                <div class="start-time">-- START AT {{ $tour->start_time }} --</div>
+                <div class="price">{{ $tour->price }}<span class="pax">/Pax</span></div>
                 <a href="#" class="btn-tour-book">Book now</a>
             </div>
         </div>
-
-        <!-- BARIS 2: Ubud Tour (Teks Kiri, Gambar Kanan karena ada kelas 'reverse') -->
-        <div class="tour-row reverse">
-            <!-- KUNCI: Tetap panggil collage duluan! -->
-            <div class="tour-collage">
-                <img src="{{ Vite::asset('resources/images/ubud-1.jpg') }}" alt="Ubud">
-                <img src="{{ Vite::asset('resources/images/ubud-2.jpg') }}" alt="Ubud">
-                <img src="{{ Vite::asset('resources/images/ubud-3.jpg') }}" alt="Ubud">
-                <img src="{{ Vite::asset('resources/images/ubud-4.jpg') }}" alt="Ubud">
-            </div>
-            <div class="tour-info">
-                <h3>Ubud tour</h3>
-                <div class="info-line"></div>
-                <p>
-                    Monkey forest<br>
-                    Waterfall<br>
-                    Coffee Plantation<br>
-                    Temple<br>
-                    Rice terrace
-                <div class="start-time">-- START AT 8 AM --</div>
-                <div class="price">$40 USD<span class="pax">/Pax</span></div>
-                <a href="#" class="btn-tour-book">Book Now</a>
-            </div>
-        </div>
-
-        <!-- Baris 3: East Coast (Gambar Kiri, Teks Kanan) -->
-        <div class="tour-row">
-            <div class="tour-collage">
-                <img src="{{ Vite::asset('resources/images/tour-east.png') }}" alt="east">
-                <img src="{{ Vite::asset('resources/images/east-2.jpg') }}" alt="east">
-                <img src="{{ Vite::asset('resources/images/east-3.jpg') }}" alt="east">
-                <img src="{{ Vite::asset('resources/images/east-4.jpg') }}" alt="east">
-            </div>
-            <div class="tour-info">
-                <h3>East Coast Bali Tour</h3>
-                <div class="info-line"></div>
-                <p>
-                    Lempuyang (Gate of Heaven)<br>
-                    Tirta Gangga Water Palace<br>
-                    Coffee Plantation<br>
-                    Virgin Beach<br>
-                    Waterfall
-                </p>
-                <div class="start-time">-- START AT 8 AM --</div>
-                <div class="price">$40 USD<span class="pax">/Pax</span></div>
-                <a href="#" class="btn-tour-book">BOOK NOW</a>
-            </div>
-        </div>
-
-        <!-- BARIS 2: Ubud Tour (Teks Kiri, Gambar Kanan karena ada kelas 'reverse') -->
-        <div class="tour-row reverse">
-            <!-- KUNCI: Tetap panggil collage duluan! -->
-            <div class="tour-collage">
-                <img src="{{ Vite::asset('resources/images/west-1.jpg') }}" alt="west">
-                <img src="{{ Vite::asset('resources/images/west-2.jpg') }}" alt="west">
-                <img src="{{ Vite::asset('resources/images/west-3.jpg') }}" alt="west">
-                <img src="{{ Vite::asset('resources/images/west-4.jpg') }}" alt="west">
-            </div>
-            <div class="tour-info">
-                <h3>West bali Tour</h3>
-                <div class="info-line"></div>
-                <p>
-                    Taman Ayun the Royal Temple<br>
-                    Jatiluwih UNESCO Rice Field<br>
-                    Coffee Plantation<br>
-                    Lake Bratan Temple<br>
-                    Handara Gate<br>
-                    Hidden Hill Photo Spots<br>
-                    Waterfall<br>
-                    Tanah Lot Temple
-                </p>
-                <div class="start-time">-- START AT 8 AM --</div>
-                <div class="price">$40 USD<span class="pax">/Pax</span></div>
-                <a href="#" class="btn-tour-book">BOOK NOW</a>
-            </div>
-        </div>
-
-        <!-- Baris 5: South Bali (Gambar Kiri, Teks Kanan) -->
-        <div class="tour-row">
-            <div class="tour-collage">
-                <img src="{{ Vite::asset('resources/images/south-1.jpg') }}" alt="south">
-                <img src="{{ Vite::asset('resources/images/south-2.jpg') }}" alt="south">
-                <img src="{{ Vite::asset('resources/images/tour-south.jpg') }}" alt="south">
-                <img src="{{ Vite::asset('resources/images/south-4.jpg') }}" alt="south">
-            </div>
-            <div class="tour-info">
-                <h3>South Bali Tour</h3>
-                <div class="info-line"></div>
-                <p>
-                    Water Sports<br>
-                    Coffee Plantation<br>
-                    Padang-Padang Beach<br>
-                    Uluwatu Temple Kecak & Fire Dance
-                </p>
-                <div class="start-time">-- START AT 8 AM --</div>
-                <div class="price">$40 USD<span class="pax">/Pax</span></div>
-                <a href="#" class="btn-tour-book">BOOK NOW</a>
-            </div>
-        </div>
-
-        <!-- BARIS 2: Ubud Tour (Teks Kiri, Gambar Kanan karena ada kelas 'reverse') -->
-        <div class="tour-row reverse">
-            <!-- KUNCI: Tetap panggil collage duluan! -->
-            <div class="tour-collage">
-                <img src="{{ Vite::asset('resources/images/tour-north.jpg') }}" alt="north">
-                <img src="{{ Vite::asset('resources/images/north-2.jpg') }}" alt="north">
-                <img src="{{ Vite::asset('resources/images/north-3.jpg') }}" alt="north">
-                <img src="{{ Vite::asset('resources/images/north-4.png') }}" alt="north">
-            </div>
-            <div class="tour-info">
-                <h3>North Bali tour</h3>
-                <div class="info-line"></div>
-                <p>
-                    Lovina Dolphin Tour<br>
-                    Buddhist Temple (Brahma Vihara Arama)<br>
-                    Holy Hot Spring
-                </p>
-                <div class="start-time">-- START AT 8 AM --</div>
-                <div class="price">$40 USD<span class="pax">/Pax</span></div>
-                <a href="#" class="btn-tour-book">BOOK NOW</a>
-            </div>
-        </div>
+        @endforeach
 
     </section>
 

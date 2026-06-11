@@ -52,22 +52,19 @@
             </div>
 
             <div class="ts-pricing-wrapper">
-                <!-- Opsi 1: Drop & Pick Up -->
-                <div class="ts-card">
-                    <h4>DROP & PICK UP</h4>
-                    <div class="price">RP 350K</div>
-                    <a href="#" class="btn-tour-book">BOOK NOW</a>
-                </div>
+                @foreach($services as $index => $service)
+                    <!-- Opsi {{ $index + 1 }}: {{ $service->name }} -->
+                    <div class="ts-card">
+                        <h4>{{ $service->name }}</h4>
+                        <div class="price">{{ $service->price }}</div>
+                        <a href="#" class="btn-tour-book">BOOK NOW</a>
+                    </div>
 
-                <!-- Garis Pemisah Vertikal -->
-                <div class="ts-divider"></div>
-
-                <!-- Opsi 2: Drop or Pick Up -->
-                <div class="ts-card">
-                    <h4>DROP OR PICK UP</h4>
-                    <div class="price">RP 175K</div>
-                    <a href="#" class="btn-tour-book">BOOK NOW</a>
-                </div>
+                    @if(!$loop->last)
+                    <!-- Garis Pemisah Vertikal -->
+                    <div class="ts-divider"></div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -81,41 +78,23 @@
     <!-- 4. VEHICLE RENT CATALOG (ZIG-ZAG) -->
     <section class="transport-fleet-wrapper">
 
-        <!-- Motor 1: N-Max (Gambar Kiri, Teks Kanan) -->
-        <div class="tour-row">
+        @foreach($rents as $rent)
+        <!-- Motor: {{ $rent->name }} -->
+        <div class="tour-row {{ $rent->is_reverse ? 'reverse' : '' }}">
             <div class="transport-image">
-                <img src="{{ Vite::asset('resources/images/rent-nmax.jpg') }}" alt="Yamaha N-Max">
+                <img src="{{ Vite::asset('resources/images/' . $rent->image) }}" alt="{{ $rent->name }}">
             </div>
             <div class="tour-info">
-                <h3>YAMAHA N-MAX</h3>
+                <h3>{{ $rent->name }}</h3>
                 <div class="info-line"></div>
                 <p>
-                    PREMIUM MAXI SCOOTER<br>
-                    COMFORTABLE RIDING POSITION<br>
-                    HELMETS INCLUDED
+                    {!! nl2br(e($rent->description)) !!}
                 </p>
-                <div class="price">RP 250K<span class="pax">/DAY</span></div>
+                <div class="price">{{ $rent->price }}<span class="pax">/DAY</span></div>
                 <a href="#" class="btn-tour-book">BOOK NOW</a>
             </div>
         </div>
-
-        <!-- Motor 2: Scoopy (Teks Kiri, Gambar Kanan) -->
-        <div class="tour-row reverse">
-            <div class="transport-image">
-                <img src="{{ Vite::asset('resources/images/rent-scoopy.jpg') }}" alt="Honda Scoopy">
-            </div>
-            <div class="tour-info">
-                <h3>HONDA SCOOPY</h3>
-                <div class="info-line"></div>
-                <p>
-                    CLASSIC & STYLISH DESIGN<br>
-                    EASY TO RIDE<br>
-                    HELMETS INCLUDED
-                </p>
-                <div class="price">RP 150K<span class="pax">/DAY</span></div>
-                <a href="#" class="btn-tour-book">BOOK NOW</a>
-            </div>
-        </div>
+        @endforeach
 
     </section>
 

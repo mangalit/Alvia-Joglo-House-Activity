@@ -7,6 +7,7 @@ use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ReviewController;
 
 
 Route::get('/', [LandingController::class, 'home'])->name('home');
@@ -15,3 +16,5 @@ Route::get('/tracking', [TrackingController::class, 'tracking'])->name('tracking
 Route::get('/tour', [TourController::class, 'tour'])->name('tour');
 Route::get('/transport', [TransportController::class, 'transport'])->name('transport');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+
+Route::post('/review', [ReviewController::class, 'store'])->name('review.store');
