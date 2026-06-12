@@ -32,10 +32,10 @@
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION (Langsung menggunakan class activity-hero agar kotak bingkai gandanya persis kembar) -->
+    <!-- 1. HERO SECTION -->
     <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/menu-transport.png') }}');">
         <div class="activity-hero-overlay"></div>
-        <div class="activity-hero-box-outline">
+        <div class="activity-hero-box-outline" data-aos="zoom-in">
             <div class="activity-hero-box">
                 <h1 class="activity-hero-title">TRANSPORT</h1>
             </div>
@@ -43,9 +43,9 @@
     </header>
 
     <!-- 2. TRANSPORT SERVICE SECTION (Kotak Eksklusif) -->
-    <section class="transport-service-section">
+    <section class="transport-service-section" data-aos="fade-up">
         <div class="ts-container">
-            <div class="ts-header">
+            <div class="ts-header" data-aos="fade-up" data-aos-delay="200">
                 <h2>TRANSPORT SERVICE</h2>
                 <div class="ts-line"></div>
                 <p class="route">AIRPORT &mdash; UBUD AREA &mdash; TAMPAKSIRING AREA</p>
@@ -54,7 +54,7 @@
             <div class="ts-pricing-wrapper">
                 @foreach($services as $index => $service)
                     <!-- Opsi {{ $index + 1 }}: {{ $service->name }} -->
-                    <div class="ts-card">
+                    <div class="ts-card" data-aos="fade-up" data-aos-delay="{{ 300 + ($index * 100) }}">
                         <h4>{{ $service->name }}</h4>
                         <div class="price">{{ $service->price }}</div>
                         <a href="#" class="btn-tour-book">BOOK NOW</a>
@@ -62,7 +62,7 @@
 
                     @if(!$loop->last)
                     <!-- Garis Pemisah Vertikal -->
-                    <div class="ts-divider"></div>
+                    <div class="ts-divider" data-aos="fade-in" data-aos-delay="400"></div>
                     @endif
                 @endforeach
             </div>
@@ -70,7 +70,7 @@
     </section>
 
     <!-- 3. VEHICLE RENT TITLE -->
-    <div class="tour-divider" style="background-color: #ffffff; padding-bottom: 20px;">
+    <div class="tour-divider" style="background-color: #ffffff; padding-bottom: 20px;" data-aos="fade-up">
         <h2 style="font-family: 'Cinzel', serif; font-size: 60px; color: #000000; letter-spacing: 4px;">Motorcycle Rent</h2>
         <div class="info-line" style="width: 35%; height: 2px; background-color: #AC8F57; margin: 15px auto 0 auto;"></div>
     </div>
@@ -80,11 +80,11 @@
 
         @foreach($rents as $rent)
         <!-- Motor: {{ $rent->name }} -->
-        <div class="tour-row {{ $rent->is_reverse ? 'reverse' : '' }}">
-            <div class="transport-image">
+        <div class="tour-row {{ $rent->is_reverse ? 'reverse' : '' }}" data-aos="fade-up">
+            <div class="transport-image" data-aos="{{ $rent->is_reverse ? 'fade-left' : 'fade-right' }}">
                 <img src="{{ Vite::asset('resources/images/' . $rent->image) }}" alt="{{ $rent->name }}">
             </div>
-            <div class="tour-info">
+            <div class="tour-info" data-aos="{{ $rent->is_reverse ? 'fade-right' : 'fade-left' }}">
                 <h3>{{ $rent->name }}</h3>
                 <div class="info-line"></div>
                 <p>
@@ -141,5 +141,7 @@
         </div>
     </footer>
 
-</body>
-</html>
+    @include('chatbot_widget')
+    </body>
+    </html>
+

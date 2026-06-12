@@ -42,7 +42,7 @@
     <section class="about-hero" style="background-image: url('{{ Vite::asset('resources/images/about-hero-bg.png') }}');">
         <div class="about-hero-container">
             <!-- Kotak Kiri (Putih Semi-Transparan) -->
-            <div class="hero-box left-box">
+            <div class="hero-box left-box" data-aos="fade-right">
                 <p>
                     Nestled in the tranquil heart of the island,<br>
                     Alvia Joglo House is more than just a luxurious<br>
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Kotak Kanan (Hitam Semi-Transparan) -->
-            <div class="hero-box right-box">
+            <div class="hero-box right-box" data-aos="fade-left">
                 <h2>About Us</h2>
                 <h3>ALVIA JOGLO HOUSE EXPERIENCE</h3>
                 <p>
@@ -76,7 +76,7 @@
     <section class="about-description" style="background-image: url('{{ Vite::asset('resources/images/about-blur-bg.png') }}');">
         <div class="desc-overlay"></div> <!-- Layer untuk efek blur -->
         <div class="desc-container">
-            <div class="desc-column">
+            <div class="desc-column" data-aos="fade-up" data-aos-delay="200">
                 <h4>A Sanctuary of Tradition & Luxury</h4>
                 <p>
                     Discover a hidden paradise where authentic Balinese architecture<br>
@@ -87,7 +87,7 @@
                     living canvas for a truly tranquil holiday.
                 </p>
             </div>
-            <div class="desc-column">
+            <div class="desc-column" data-aos="fade-up" data-aos-delay="400">
                 <h4>Curated Island Experiences</h4>
                 <p>
                     Beyond the comfort of our relaxing rooms and locally inspired<br>
@@ -109,7 +109,7 @@
         <div class="contact-overlay"></div>
         <div class="contact-container">
 
-            <div class="contact-left">
+            <div class="contact-left" data-aos="fade-right">
                 <p class="contact-subtitle">WE'D LOVE TO HEAR FROM YOU</p>
                 <h2 class="contact-title">Contact Us</h2>
                 <div class="contact-line"></div>
@@ -142,7 +142,7 @@
             </div>
 
             <!-- Kolom Peta Kanan -->
-            <div class="contact-right">
+            <div class="contact-right" data-aos="zoom-in" data-aos-delay="300">
                 <div class="map-container">
                     <!-- Embed Google Maps (Silakan ganti titik kordinat iframe ini nanti dengan lokasi presisi Alvia Joglo) -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3946.6799527686594!2d115.3103261!3d-8.4330564!3m2!1i1024!2i768!4f13.1!2m1!1salvia%20joglo%20house!5e0!3m2!1sen!2sid!4v1779814705433!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -202,5 +202,7 @@
         </div>
     </footer>
 
-</body>
-</html>
+    @include('chatbot_widget')
+    </body>
+    </html>
+

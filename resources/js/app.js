@@ -1,6 +1,15 @@
 import './bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+    });
+
     const hamburger = document.getElementById('hamburgerMenu');
     const navLinks = document.getElementById('navLinks');
     const navbar = document.querySelector('.navbar');
@@ -50,4 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // =========================================================
+    // 4. FAST MOBILE ANIMATION TRIGGER
+    // =========================================================
+    const mobileRevealItems = document.querySelectorAll('.reveal-on-scroll');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { 
+        threshold: 0.05, // Sangat sensitif, terlihat sedikit langsung muncul
+        rootMargin: "0px 0px -20px 0px" // Triggers slightly before element hits the bottom
+    });
+
+    mobileRevealItems.forEach(item => revealObserver.observe(item));
 });

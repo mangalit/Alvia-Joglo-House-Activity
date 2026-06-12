@@ -56,7 +56,7 @@
     <header class="hero-section">
         <div class="hero-overlay"></div>
 
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up">
             <p class="welcome-text">WELCOME TO</p>
             <h1 class="main-title">ALVIA JOGLO</h1>
             <h2 class="sub-title">Experience</h2>
@@ -71,11 +71,11 @@
 
     <section class="about-section">
         <div class="about-container">
-            <div class="about-box">
+            <div class="about-box" data-aos="fade-up" data-aos-delay="100">
                 <p><span class="dropcap">A</span>lvia Joglo House Experience: Authentic Balinese Activities Amidst the Beauty of Lush Rice Fields</p>
                 <p>Step beyond a simple stay and immerse yourself in the Alvia Joglo House Experience. We offer curated activities where the richness of Balinese culture meets the serenity of nature. Our tailored packages invite you to connect deeply with the local heritage, perfectly complementing the traditional charm of our Joglo style house. Whether you are exploring the surrounding rice terraces or engaging in authentic cultural practices, let the tranquil landscapes of Bali be the backdrop to your unforgettable journey.</p>
             </div>
-            <div class="about-box">
+            <div class="about-box" data-aos="fade-up" data-aos-delay="300">
                 <p>Connect with us directly via WhatsApp to book your personalized activities – and discover our exclusive experience packages – to make the most of your time at our beautiful Joglo.</p>
                 <p>Find inspiration in every moment with the Alvia Joglo House Experience. Our carefully crafted activities provide a deeper connection to the island, from mastering local flavors in a traditional Balinese cooking session to guided walks through the vibrant green rice fields. Immerse yourself in the refreshing pace of rural Bali, surrounded by breathtaking views and genuine hospitality. With our dedicated experience packages, enjoy the perfect combination of adventure, cultural discovery, and the enchanting tranquility of Alvia Joglo House.</p>
             </div>
@@ -85,7 +85,7 @@
 
     <section class="experience-section">
         <div class="experience-container">
-            <div class="experience-text">
+            <div class="experience-text" data-aos="fade-right">
                 <h2 class="experience-title">Experience</h2>
                 <p class="experience-desc">
                     Reconnect. Reflect. Revitalize.
@@ -99,24 +99,24 @@
             </div>
 
             <div class="grid-container">
-                <a href="{{ url('/activity') }}" class="grid-card card-activity">
+                <a href="{{ url('/activity') }}" class="grid-card card-activity" data-aos="zoom-in" data-aos-delay="100">
                     <img src="{{ Vite::asset('resources/images/menu-activity.png') }}" alt="Activity">
                     <div class="card-top-overlay"><h3>Activity</h3></div>
                 </a>
 
                 <div class="grid-middle-wrapper">
-                    <a href="{{ url('/tracking') }}" class="grid-card card-tracking">
+                    <a href="{{ url('/tracking') }}" class="grid-card card-tracking" data-aos="zoom-in" data-aos-delay="200">
                         <img src="{{ Vite::asset('resources/images/menu-tracking.png') }}" alt="Tracking">
                         <div class="card-top-overlay"><h3>Tracking</h3></div>
                     </a>
 
-                    <a href="{{ url('/transport') }}" class="grid-card card-transport">
+                    <a href="{{ url('/transport') }}" class="grid-card card-transport" data-aos="zoom-in" data-aos-delay="300">
                         <img src="{{ Vite::asset('resources/images/menu-transport.png') }}" alt="Transport">
                         <div class="card-top-overlay"><h3>Transport</h3></div>
                     </a>
                 </div>
 
-                <a href="{{ url('/tour') }}" class="grid-card card-tour">
+                <a href="{{ url('/tour') }}" class="grid-card card-tour" data-aos="zoom-in" data-aos-delay="400">
                     <img src="{{ Vite::asset('resources/images/menu_tour.png') }}" alt="Tour">
                     <div class="card-top-overlay"><h3>Tour</h3></div>
                 </a>
@@ -125,7 +125,7 @@
     </section>
 
     <!-- LUXURY RATING SYSTEM -->
-    <section class="rating-section" style="background-color: #000; padding: 100px 0; font-family: 'Cinzel', serif; color: #fff; overflow: hidden;">
+    <section class="rating-section" data-aos="fade-up" style="background-color: #000; padding: 100px 0; font-family: 'Cinzel', serif; color: #fff; overflow: hidden;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <div class="rating-header" style="text-align: center; margin-bottom: 50px;">
                 <h2 style="font-size: 48px; letter-spacing: 5px; margin-bottom: 10px;">GUEST REVIEWS</h2>
@@ -226,6 +226,18 @@
             <!-- SUBMIT REVIEW FORM -->
             <div class="submit-review-container" style="max-width: 800px; margin: 0 auto; border: 1px solid #AC8F57; padding: 60px; background: rgba(172, 143, 87, 0.03);">
                 <h3 style="text-align: center; font-size: 32px; letter-spacing: 3px; margin-bottom: 40px;">SHARE YOUR EXPERIENCE</h3>
+
+                @if(session('success'))
+                    <div style="background: rgba(40, 167, 69, 0.2); border: 1px solid #28a745; color: #fff; padding: 15px; margin-bottom: 30px; text-align: center; font-family: 'Montserrat', sans-serif;">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div style="background: rgba(220, 53, 69, 0.2); border: 1px solid #dc3545; color: #fff; padding: 15px; margin-bottom: 30px; text-align: center; font-family: 'Montserrat', sans-serif;">
+                        {{ session('error') }}
+                    </div>
+                @endif
 
                 <form action="{{ route('review.store') }}" method="POST">
                     @csrf
@@ -454,6 +466,8 @@
 
         </div>
     </footer>
+
+    @include('chatbot_widget')
 
 </body>
 </html>

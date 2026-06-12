@@ -32,10 +32,10 @@
         </div>
     </nav>
 
-<!-- HERO SECTION (Menggunakan style dari Activity) -->
+<!-- HERO SECTION -->
     <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/tracking-hero.jpg') }}');">
         <div class="activity-hero-overlay"></div>
-        <div class="activity-hero-box-outline">
+        <div class="activity-hero-box-outline" data-aos="zoom-in" data-aos-duration="1200">
             <div class="activity-hero-box">
                 <h1 class="activity-hero-title">TRACKING</h1>
             </div>
@@ -44,10 +44,10 @@
 
     <!-- 2. INTRO SECTION -->
     <section class="tracking-intro">
-        <div class="intro-left">
+        <div class="intro-left" data-aos="fade-right" data-aos-delay="200">
             <h2>Alvia<br>Tracking Trip</h2>
         </div>
-        <div class="intro-right">
+        <div class="intro-right" data-aos="fade-left" data-aos-delay="400">
             <h3>Authentic Journey</h3>
             <p>
                 Step into the authentic heart of Bali<br>
@@ -60,7 +60,7 @@
     </section>
 
     <!-- 3. TIMELINE HEADER (SHORT TRACK) -->
-    <section class="tracking-timeline-header">
+    <section class="tracking-timeline-header" data-aos="fade-up">
         <div class="timeline-header">
             <h2>Short Track</h2>
             <p class="subtitle">2 Hours Duration | Start From 6AM</p>
@@ -77,7 +77,7 @@
             </svg>
         </div>
         <div class="timeline-content-wrapper">
-            <div class="timeline-item">
+            <div class="timeline-item" data-aos="fade-up">
                 <div class="tl-image">
                     <img src="{{ Vite::asset('resources/images/track-sunrise.png') }}" alt="Golden Sunrise Terraces">
                 </div>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="timeline-item reverse">
+        <div class="timeline-item reverse" data-aos="fade-up">
             <!-- Teks diletakkan di atas agar tampil di sebelah kiri -->
             <div class="tl-text">
                 <h3>Authentic<br>Local Market</h3>
@@ -117,7 +117,7 @@
             </div>
         </div>
 
-        <div class="timeline-item item-school">
+        <div class="timeline-item item-school" data-aos="fade-up">
             <div class="tl-image">
                 <img src="{{ Vite::asset('resources/images/track-school.png') }}" alt="Heartwarming Village School">
             </div>
@@ -136,11 +136,11 @@
             </div>
         </div>
 
-        <div class="explore-divider">
+        <div class="explore-divider reveal-on-scroll" data-aos="fade-up">
             <h2>-WANT TO EXPLORE FURTHER?-</h2>
         </div>
 
-        <div class="timeline-header long-track-header">
+        <div class="timeline-header long-track-header reveal-on-scroll" data-aos="fade-up" data-aos-delay="200">
             <h2>Extend Your Journey To The<br>Long Track</h2>
             <p class="subtitle">4 Hours Duration | 550k/pax</p>
         </div>
@@ -154,7 +154,7 @@
             </svg>
         </div>
         <div class="timeline-content-wrapper-8">
-            <div class="timeline-item reverse item-river">
+            <div class="timeline-item reverse item-river reveal-on-scroll" data-aos="fade-up">
                 <div class="tl-text">
                     <h3>Serene<br>River Crossing</h3>
                     <p>
@@ -177,7 +177,7 @@
             </div>
         </div>
 
-        <div class="timeline-item item-temple">
+        <div class="timeline-item item-temple reveal-on-scroll" data-aos="fade-up">
             <!-- Gambar di Kiri (Format Normal) -->
             <div class="tl-image">
                 <!-- Pastikan nama file gambar Anda sesuai (.jpg atau .png) -->
@@ -202,7 +202,7 @@
             </div>
         </div>
 
-        <div class="timeline-finish">
+        <div class="timeline-finish reveal-on-scroll" data-aos="fade-up" data-aos-duration="1000">
             <h2>Finish</h2>
         </div>
 
@@ -251,5 +251,7 @@
         </div>
     </footer>
 
-</body>
-</html>
+    @include('chatbot_widget')
+    </body>
+    </html>
+

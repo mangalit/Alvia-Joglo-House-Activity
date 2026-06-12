@@ -33,7 +33,7 @@
 
     <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/activity-hero.png') }}');">
         <div class="activity-hero-overlay"></div>
-        <div class="activity-hero-box-outline">
+        <div class="activity-hero-box-outline" data-aos="zoom-in">
             <div class="activity-hero-box">
                 <h1 class="activity-hero-title">ACTIVITY</h1>
             </div>
@@ -43,7 +43,7 @@
     <section class="activity-section">
 
         @foreach($activities as $activity)
-        <div class="activity-container">
+        <div class="activity-container" data-aos="fade-up">
             <div class="act-header {{ $activity->is_reverse ? 'reverse' : '' }} {{ $activity->name == 'ATV Ride' ? 'atv-header' : '' }}">
                 <div class="act-title-col">
                     <h2 class="act-title"><span class="thin-dash"></span>{{ $activity->name }}</h2>
@@ -134,5 +134,7 @@
         </div>
     </footer>
 
-</body>
-</html>
+    @include('chatbot_widget')
+    </body>
+    </html>
+

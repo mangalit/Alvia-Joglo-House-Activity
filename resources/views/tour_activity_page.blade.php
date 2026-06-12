@@ -41,7 +41,7 @@
         <div class="tour-hero-overlay"></div>
 
         <!-- Kotak Judul TOUR -->
-        <div class="tour-hero-box-outline">
+        <div class="tour-hero-box-outline" data-aos="zoom-in">
             <div class="tour-hero-box">
                 <h1 class="tour-hero-title">TOUR</h1>
             </div>
@@ -49,8 +49,8 @@
 
         <!-- Grid 6 Destinasi -->
         <div class="tour-thumb-container">
-            @foreach($tours as $tour)
-            <div class="tour-thumb-card"><img src="{{ Vite::asset('resources/images/' . $tour->main_image) }}" alt="{{ $tour->name }}"><div class="thumb-title">{{ $tour->name }}</div></div>
+            @foreach($tours as $index => $tour)
+            <div class="tour-thumb-card" data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}"><img src="{{ Vite::asset('resources/images/' . $tour->main_image) }}" alt="{{ $tour->name }}"><div class="thumb-title">{{ $tour->name }}</div></div>
             @endforeach
         </div>
     </header>
@@ -58,7 +58,7 @@
     <!-- =========================================================
          2. DISCOVER MORE DIVIDER
          ========================================================= -->
-    <div class="tour-divider">
+    <div class="tour-divider" data-aos="fade-up">
         <h2>Discover More</h2>
     </div>
 
@@ -68,13 +68,13 @@
     <section class="tour-details-wrapper">
         @foreach($tours as $tour)
         <!-- BARIS: {{ $tour->name }} -->
-        <div class="tour-row {{ $tour->is_reverse ? 'reverse' : '' }}">
-            <div class="tour-collage">
+        <div class="tour-row {{ $tour->is_reverse ? 'reverse' : '' }}" data-aos="fade-up">
+            <div class="tour-collage" data-aos="{{ $tour->is_reverse ? 'fade-left' : 'fade-right' }}">
                 @foreach($tour->images as $image)
                     <img src="{{ Vite::asset('resources/images/' . $image) }}" alt="{{ $tour->name }}">
                 @endforeach
             </div>
-            <div class="tour-info">
+            <div class="tour-info" data-aos="{{ $tour->is_reverse ? 'fade-right' : 'fade-left' }}">
                 <h3>{{ $tour->name }}</h3>
                 <div class="info-line"></div>
                 <p>
@@ -126,5 +126,7 @@
         </div>
     </footer>
 
-</body>
-</html>
+    @include('chatbot_widget')
+    </body>
+    </html>
+

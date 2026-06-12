@@ -8,6 +8,7 @@ use App\Http\Controllers\TourController;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ChatbotController;
 
 
 Route::get('/', [LandingController::class, 'home'])->name('home');
@@ -18,3 +19,4 @@ Route::get('/transport', [TransportController::class, 'transport'])->name('trans
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 Route::post('/review', [ReviewController::class, 'store'])->name('review.store');
+Route::post('/chatbot', [ChatbotController::class, 'chat'])->name('chatbot.chat');
