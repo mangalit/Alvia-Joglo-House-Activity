@@ -50,7 +50,10 @@
         <!-- Grid 6 Destinasi -->
         <div class="tour-thumb-container">
             @foreach($tours as $index => $tour)
-            <div class="tour-thumb-card" data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}"><img src="{{ Vite::asset('resources/images/' . $tour->main_image) }}" alt="{{ $tour->name }}"><div class="thumb-title">{{ $tour->name }}</div></div>
+            <a href="#{{ \Illuminate\Support\Str::slug($tour->name) }}" class="tour-thumb-card" data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
+                <img src="{{ Vite::asset('resources/images/' . $tour->main_image) }}" alt="{{ $tour->name }}">
+                <div class="thumb-title">{{ $tour->name }}</div>
+            </a>
             @endforeach
         </div>
     </header>
@@ -68,7 +71,7 @@
     <section class="tour-details-wrapper">
         @foreach($tours as $tour)
         <!-- BARIS: {{ $tour->name }} -->
-        <div class="tour-row {{ $tour->is_reverse ? 'reverse' : '' }}" data-aos="fade-up">
+        <div id="{{ \Illuminate\Support\Str::slug($tour->name) }}" class="tour-row {{ $tour->is_reverse ? 'reverse' : '' }}" data-aos="fade-up">
             <div class="tour-collage" data-aos="{{ $tour->is_reverse ? 'fade-left' : 'fade-right' }}">
                 @foreach($tour->images as $image)
                     <img src="{{ Vite::asset('resources/images/' . $image) }}" alt="{{ $tour->name }}">
@@ -82,7 +85,7 @@
                 </p>
                 <div class="start-time">-- START AT {{ $tour->start_time }} --</div>
                 <div class="price">{{ $tour->price }}<span class="pax">/Pax</span></div>
-                <a href="#" class="btn-tour-book">Book now</a>
+                <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the " . $tour->name . ". Could you provide more information?") }}" target="_blank" class="btn-tour-book">Book now</a>
             </div>
         </div>
         @endforeach
@@ -111,17 +114,17 @@
                 <h4 class="footer-heading">Contact Us</h4>
                 <div class="contact-info">
                     <p class="address">Alvia Joglo House Experience.<br>Pulagan Tampaksiring, Gianyar, Bali<br>Post Code 80552</p>
-                    <p class="details"><a href="#">+62 878-9903-0306</a><br><a href="mailto:alviajoglohouse@gmail.com">alviajoglohouse@gmail.com</a></p>
+                    <p class="details"><a href="https://wa.me/6287899030306" target="_blank">+62 878-9903-0306</a><br><a href="mailto:alviajoglohouse@gmail.com">alviajoglohouse@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-column social-column">
                 <h4 class="footer-heading">Get Connected</h4>
                 <div class="footer-social-icons">
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/alvia.joglo" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/alviajoglo/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://wa.me/6287899030306" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 </div>
-                <a href="#" class="btn-footer-book">BOOK NOW</a>
+                <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I'm interested in your services. Can you help me plan my activities and tours in Bali?") }}" target="_blank" class="btn-footer-book">BOOK NOW</a>
             </div>
         </div>
     </footer>

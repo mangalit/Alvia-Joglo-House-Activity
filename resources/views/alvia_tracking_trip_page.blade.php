@@ -234,7 +234,7 @@
                         Post Code 80552
                     </p>
                     <p class="details">
-                        <a href="#">+62 878-9903-0306</a><br>
+                        <a href="https://wa.me/6287899030306" target="_blank">+62 878-9903-0306</a><br>
                         <a href="mailto:alviajoglohouse@gmail.com">alviajoglohouse@gmail.com</a>
                     </p>
                 </div>
@@ -242,11 +242,11 @@
             <div class="footer-column social-column">
                 <h4 class="footer-heading">Get Connected</h4>
                 <div class="footer-social-icons">
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/alvia.joglo" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/alviajoglo/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://wa.me/6287899030306" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 </div>
-                <a href="#" class="btn-footer-book">BOOK NOW</a>
+                <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I'm interested in your services. Can you help me plan my activities and tours in Bali?") }}" target="_blank" class="btn-footer-book">BOOK NOW</a>
             </div>
         </div>
     </footer>

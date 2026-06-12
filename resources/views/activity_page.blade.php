@@ -65,7 +65,7 @@
                 <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/' . $activity->bg_image) }}');">
                     <h4>{{ $activity->card_title }}</h4>
                     <p>{{ $activity->description }}</p>
-                    <a href="#" class="act-btn">BOOK NOW</a>
+                    <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the " . $activity->name . " activity. Could you provide more information?") }}" target="_blank" class="act-btn">BOOK NOW</a>
                 </div>
 
                 <div class="act-atv-side">
@@ -78,7 +78,7 @@
                 <div class="act-text-box" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('{{ Vite::asset('resources/images/' . $activity->bg_image) }}');">
                     <h4>{{ $activity->card_title }}</h4>
                     <p>{{ $activity->description }}</p>
-                    <a href="#" class="act-btn">BOOK NOW</a>
+                    <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the " . $activity->name . " activity. Could you provide more information?") }}" target="_blank" class="act-btn">BOOK NOW</a>
                 </div>
                 <div class="act-images">
                     @foreach($activity->images as $image)
@@ -117,7 +117,7 @@
                         Post Code 80552
                     </p>
                     <p class="details">
-                        <a href="tel:+6287899030306">+62 878-9903-0306</a><br>
+                        <a href="https://wa.me/6287899030306" target="_blank">+62 878-9903-0306</a><br>
                         <a href="mailto:alviajoglohouse@gmail.com">alviajoglohouse@gmail.com</a>
                     </p>
                 </div>
@@ -125,11 +125,11 @@
             <div class="footer-column social-column">
                 <h4 class="footer-heading">Get Connected</h4>
                 <div class="footer-social-icons">
-                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/alvia.joglo" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/alviajoglo/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://wa.me/6287899030306" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 </div>
-                <a href="#" class="btn-footer-book">BOOK NOW</a>
+                <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I'm interested in your services. Can you help me plan my activities and tours in Bali?") }}" target="_blank" class="btn-footer-book">BOOK NOW</a>
             </div>
         </div>
     </footer>

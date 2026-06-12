@@ -21,7 +21,7 @@
     <!-- Messages Area -->
     <div id="chat-messages" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
         <div style="align-self: flex-start; background: #222; color: #eee; padding: 10px 15px; border-radius: 15px 15px 15px 0; max-width: 80%; font-size: 14px; border: 1px solid #333;">
-            Om Swastyastu🙏 Selamat datang di Alvia Joglo House experience. Ada yang bisa saya bantu hari ini?
+            Om Swastyastu 🙏 Welcome to the Alvia Joglo House experience. How can I help you today?
         </div>
     </div>
 
@@ -70,13 +70,13 @@
             if (data.reply) {
                 appendMessage('bot', data.reply);
             } else {
-                const errorMsg = data.error ? 'Error: ' + data.error : 'Maaf, saya sedang mengalami gangguan. Silakan coba lagi nanti.';
+                const errorMsg = data.error ? 'Error: ' + data.error : 'We apologize, but the system is currently experiencing an interruption. Please try again at a later time.';
                 appendMessage('bot', errorMsg);
             }
         } catch (error) {
             console.error('Error:', error);
             document.getElementById(typingId).remove();
-            appendMessage('bot', 'Maaf, terjadi kesalahan teknis.');
+            appendMessage('bot', 'We apologize, a technical error has occurred.');
         }
     }
 

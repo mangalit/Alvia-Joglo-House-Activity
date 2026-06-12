@@ -34,7 +34,7 @@ class ChatbotController extends Controller
 
         try {
             // Menggunakan gemini-flash-latest agar selalu mendapat versi terbaru yang aktif
-            $result = Gemini::generativeModel('gemini-flash-latest')->generateContent([
+            $result = Gemini::generativeModel('gemini-flash-lite-latest')->generateContent([
                 $context,
                 "User says: " . $message
             ]);
