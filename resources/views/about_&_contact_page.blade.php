@@ -39,7 +39,7 @@
          1. ABOUT HERO SECTION
          ========================================================= -->
     <!-- Ganti 'about-hero-bg.jpg' dengan nama file foto pemandangan Anda -->
-    <section class="about-hero" style="background-image: url('{{ Vite::asset('resources/images/about-hero-bg.png') }}');">
+    <section class="about-hero" style="background-image: url('{{ Vite::asset('resources/images/about-hero-bg.jpg') }}');">
         <div class="about-hero-container">
             <!-- Kotak Kiri (Putih Semi-Transparan) -->
             <div class="hero-box left-box" data-aos="fade-right">
@@ -105,7 +105,7 @@
          3. CONTACT & MAP SECTION
          ========================================================= -->
     <!-- Ganti 'contact-bg.jpg' dengan nama gambar latar pura/temple Anda -->
-    <section class="contact-section" style="background-image: url('{{ Vite::asset('resources/images/contact-bg.png') }}');">
+    <section class="contact-section" style="background-image: url('{{ Vite::asset('resources/images/contact-bg.jpg') }}');">
         <div class="contact-overlay"></div>
         <div class="contact-container">
 

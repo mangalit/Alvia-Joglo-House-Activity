@@ -33,7 +33,7 @@
     </nav>
 
     <!-- 1. HERO SECTION -->
-    <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/menu-transport.png') }}');">
+    <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/menu-transport.jpg') }}');">
         <div class="activity-hero-overlay"></div>
         <div class="activity-hero-box-outline" data-aos="zoom-in">
             <div class="activity-hero-box">

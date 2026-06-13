@@ -79,7 +79,7 @@
         <div class="timeline-content-wrapper">
             <div class="timeline-item" data-aos="fade-up">
                 <div class="tl-image">
-                    <img src="{{ Vite::asset('resources/images/track-sunrise.png') }}" alt="Golden Sunrise Terraces">
+                    <img src="{{ Vite::asset('resources/images/track-sunrise.jpg') }}" alt="Golden Sunrise Terraces">
                 </div>
                 <div class="tl-text">
                     <h3>Golden Sunsrise<br>Terraces</h3>
@@ -113,13 +113,13 @@
                 </p>
             </div>
             <div class="tl-image">
-                <img src="{{ Vite::asset('resources/images/track-market.png') }}" alt="Authentic Local Market">
+                <img src="{{ Vite::asset('resources/images/track-market.jpg') }}" alt="Authentic Local Market">
             </div>
         </div>
 
         <div class="timeline-item item-school" data-aos="fade-up">
             <div class="tl-image">
-                <img src="{{ Vite::asset('resources/images/track-school.png') }}" alt="Heartwarming Village School">
+                <img src="{{ Vite::asset('resources/images/track-school.jpg') }}" alt="Heartwarming Village School">
             </div>
             <div class="tl-text">
                 <h3>Heartwarming<br>Village School</h3>
@@ -172,7 +172,7 @@
 
                 <div class="tl-image">
                     <!-- Pastikan nama file gambar Anda sesuai -->
-                    <img src="{{ Vite::asset('resources/images/track-river.png') }}" alt="Serene River Crossing">
+                    <img src="{{ Vite::asset('resources/images/track-river.jpg') }}" alt="Serene River Crossing">
                 </div>
             </div>
         </div>
@@ -181,7 +181,7 @@
             <!-- Gambar di Kiri (Format Normal) -->
             <div class="tl-image">
                 <!-- Pastikan nama file gambar Anda sesuai (.jpg atau .png) -->
-                <img src="{{ Vite::asset('resources/images/track-temple.png') }}" alt="Gunung Kawi Temple">
+                <img src="{{ Vite::asset('resources/images/track-temple.jpg') }}" alt="Gunung Kawi Temple">
             </div>
 
             <!-- Teks di Kanan -->

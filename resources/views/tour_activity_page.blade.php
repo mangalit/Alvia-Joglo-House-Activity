@@ -37,7 +37,7 @@
     <!-- =========================================================
          1. TOUR HERO & THUMBNAIL GRID
          ========================================================= -->
-    <header class="tour-hero-section" style="background-image: url('{{ Vite::asset('resources/images/tour-hero-bg.png') }}');">
+    <header class="tour-hero-section" style="background-image: url('{{ Vite::asset('resources/images/tour-hero-bg.jpg') }}');">
         <div class="tour-hero-overlay"></div>
 
         <!-- Kotak Judul TOUR -->

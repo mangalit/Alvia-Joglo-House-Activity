@@ -28,8 +28,8 @@ class ActivitySeeder extends Seeder
                 'price_info' => 'Enjoy the relaxing river ride for Rp 500k / pax',
                 'card_title' => 'River Tubing',
                 'description' => "Float along the gentle currents and embrace the tranquility of Bali's hidden waterways with our river tubing experience. Drift peacefully through lush canyons and crystal-clear streams, allowing the soothing sounds of nature to wash away your stress. This relaxing yet captivating journey is the perfect way to connect with the island's pristine environment at your own pace.",
-                'bg_image' => 'tubing-bg.png',
-                'images' => ['tubing-1.png', 'tubing-2.png', 'tubing-3.png', 'tubing-4.png'],
+                'bg_image' => 'tubing-bg.jpg',
+                'images' => ['tubing-1.png', 'tubing-2.jpg', 'tubing-3.jpg', 'tubing-4.png'],
                 'is_reverse' => true,
             ],
             [
@@ -50,8 +50,8 @@ class ActivitySeeder extends Seeder
                 'price_info' => 'Enjoy the scenic countryside ride for Rp 500k / pax',
                 'card_title' => 'Village Cycling',
                 'description' => 'Pedal your way through the serene heart of Bali and discover its hidden gems at a leisurely pace. Glide past sweeping rice terraces, ancient temples, and vibrant local villages where you can witness the authentic daily life of the island. This eco-friendly journey offers a peaceful yet engaging way to breathe in the fresh countryside air and connect deeply with nature.',
-                'bg_image' => 'tubing-bg.png',
-                'images' => ['tubing-1.png', 'tubing-2.png', 'tubing-3.png', 'tubing-4.png'],
+                'bg_image' => 'tubing-bg.jpg',
+                'images' => ['tubing-1.png', 'tubing-2.jpg', 'tubing-3.jpg', 'tubing-4.png'],
                 'is_reverse' => true,
             ],
             [

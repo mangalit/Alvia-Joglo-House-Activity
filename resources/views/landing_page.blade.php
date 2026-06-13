@@ -100,7 +100,7 @@
 
             <div class="grid-container">
                 <a href="{{ url('/activity') }}" class="grid-card card-activity" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="{{ Vite::asset('resources/images/menu-activity.png') }}" alt="Activity">
+                    <img src="{{ Vite::asset('resources/images/menu-activity.jpg') }}" alt="Activity">
                     <div class="card-top-overlay"><h3>Activity</h3></div>
                 </a>
 
@@ -111,7 +111,7 @@
                     </a>
 
                     <a href="{{ url('/transport') }}" class="grid-card card-transport" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="{{ Vite::asset('resources/images/menu-transport.png') }}" alt="Transport">
+                        <img src="{{ Vite::asset('resources/images/menu-transport.jpg') }}" alt="Transport">
                         <div class="card-top-overlay"><h3>Transport</h3></div>
                     </a>
                 </div>

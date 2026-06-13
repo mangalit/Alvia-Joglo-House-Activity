@@ -31,7 +31,7 @@
         </div>
     </nav>
 
-    <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/activity-hero.png') }}');">
+    <header class="activity-hero" style="background-image: url('{{ Vite::asset('resources/images/activity-hero.jpg') }}');">
         <div class="activity-hero-overlay"></div>
         <div class="activity-hero-box-outline" data-aos="zoom-in">
             <div class="activity-hero-box">
