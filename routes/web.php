@@ -13,45 +13,27 @@ use App\Http\Controllers\ChatbotController;
 
 Route::get('/', [LandingController::class, 'home'])->name('home');
 
-// Deployment Helper (Hapus atau beri komentar setelah digunakan di Hostinger)
-// Akses: domainanda.com/deploy-helper?token=alvia-deploy-2026
+// Deployment Helper
 Route::get('/deploy-helper', function () {
-    if (request()->get('token') !== 'alvia-deploy-2026') {
+    if (request()->get('token') !== env('DEPLOY_HELPER_TOKEN', 'alvia-deploy-2026')) {
         return 'Unauthorized';
     }
     try {
-        // 1. Jalankan Migrasi (Buat Tabel)
+        // 1. Jalankan Migrasi (Hanya menambah tabel/kolom baru, DATA LAMA TETAP AMAN)
         \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
         
-        // 2. Bersihkan data lama untuk menghindari duplikat (Optional but safer)
-        \App\Models\Activity::truncate();
-        \App\Models\Tour::truncate();
-        \App\Models\Transport::truncate();
-        \App\Models\TrackingStop::truncate();
+        // 2. Jalankan Seeder hanya jika diminta (misal: /deploy-helper?token=...&seed=true)
+        if (request()->get('seed') === 'true') {
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'ActivitySeeder', '--force' => true]);
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'TourSeeder', '--force' => true]);
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'TrackingStopSeeder', '--force' => true]);
+            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'TransportSeeder', '--force' => true]);
+            $seedingStatus = ' (Essential Product Seeding also successful!)';
+        } else {
+            $seedingStatus = ' (Seeding skipped, data preserved)';
+        }
 
-        // 3. Jalankan Seeder Produk (Penting agar data muncul di web)
-        // Kita lewati ReviewSeeder agar testimonial tetap kosong
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'ActivitySeeder',
-            '--force' => true
-        ]);
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'TourSeeder',
-            '--force' => true
-        ]);
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'TrackingStopSeeder',
-            '--force' => true
-        ]);
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'TransportSeeder',
-            '--force' => true
-        ]);
-
-        // 3. Lewati Symlink Storage (Hostinger melarang fungsi symlink)
-        // Karena kita menggunakan Vite::asset, gambar di resources/images tetap akan tampil.
-        
-        return 'Migration and Essential Product Seeding successful! (Review data is empty)';
+        return 'Migration successful! Your data is safe.' . $seedingStatus;
     } catch (\Exception $e) {
         return 'Error: ' . $e->getMessage();
     }

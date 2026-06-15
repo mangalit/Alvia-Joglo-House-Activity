@@ -1,0 +1,26 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/u607717861/public_html
+            git pull origin main
+            php artisan config:cache
+            php artisan route:cache
+
+      - name: Trigger Database Migration
+        run: |
+          curl -fsS "https://alviajogloexperience.com/deploy-helper?token=${{ secrets.DEPLOY_HELPER_TOKEN }}"
