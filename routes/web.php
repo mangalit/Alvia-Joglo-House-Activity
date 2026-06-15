@@ -42,12 +42,8 @@ Route::get('/deploy-helper', function () {
             '--force' => true
         ]);
 
-        // 3. Buat Symlink Storage (Cara manual agar tidak kena blokir exec() Hostinger)
-        $target = storage_path('app/public');
-        $link = public_path('storage');
-        if (!file_exists($link)) {
-            @symlink($target, $link);
-        }
+        // 3. Lewati Symlink Storage (Hostinger melarang fungsi symlink)
+        // Karena kita menggunakan Vite::asset, gambar di resources/images tetap akan tampil.
         
         return 'Migration and Essential Product Seeding successful! (Review data is empty)';
     } catch (\Exception $e) {
