@@ -50,8 +50,8 @@ class ActivitySeeder extends Seeder
                 'price_info' => 'Enjoy the scenic countryside ride for Rp 500k / pax',
                 'card_title' => 'Village Cycling',
                 'description' => 'Pedal your way through the serene heart of Bali and discover its hidden gems at a leisurely pace. Glide past sweeping rice terraces, ancient temples, and vibrant local villages where you can witness the authentic daily life of the island. This eco-friendly journey offers a peaceful yet engaging way to breathe in the fresh countryside air and connect deeply with nature.',
-                'bg_image' => 'tubing-bg.jpg',
-                'images' => ['tubing-1.png', 'tubing-2.jpg', 'tubing-3.jpg', 'tubing-4.png'],
+                'bg_image' => 'cycling-bg.jpg',
+                'images' => ['cycling-1.jpg', 'cycling-2.jpg', 'cycling-3.jpg', 'cycling-4.jpg'],
                 'is_reverse' => true,
             ],
             [
@@ -61,14 +61,17 @@ class ActivitySeeder extends Seeder
                 'price_info' => 'Soar above the lush jungle canopy for Rp 450k / pax',
                 'card_title' => 'The Iconic Swing',
                 'description' => 'Elevate your Bali getaway with our iconic jungle swing experience. Soar high above the lush tropical canopy and take in breathtaking panoramic views of the surrounding valleys and verdant rice terraces. Feel the exhilarating rush of the wind as you capture unforgettable, picture perfect moments suspended beautifully in the heart of nature.',
-                'bg_image' => 'rafting-bg.png',
-                'images' => ['rafting-1.png', 'rafting-2.png', 'rafting-3.png', 'rafting-4.png'],
+                'bg_image' => 'swing-bg.jpeg',
+                'images' => ['swing-1.jpeg', 'swing-2.jpeg', 'swing-3.jpeg', 'swing-4.jpeg'],
                 'is_reverse' => false,
             ],
         ];
 
         foreach ($activities as $activity) {
-            Activity::create($activity);
+            Activity::updateOrCreate(
+                ['name' => $activity['name']],
+                $activity
+            );
         }
     }
 }

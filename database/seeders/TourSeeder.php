@@ -67,7 +67,10 @@ class TourSeeder extends Seeder
         ];
 
         foreach ($tours as $tour) {
-            Tour::create($tour);
+            Tour::updateOrCreate(
+                ['name' => $tour['name']],
+                $tour
+            );
         }
     }
 }

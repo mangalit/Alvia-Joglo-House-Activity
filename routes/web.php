@@ -23,7 +23,13 @@ Route::get('/deploy-helper', function () {
         // 1. Jalankan Migrasi (Buat Tabel)
         \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
         
-        // 2. Jalankan Seeder Produk (Penting agar data muncul di web)
+        // 2. Bersihkan data lama untuk menghindari duplikat (Optional but safer)
+        \App\Models\Activity::truncate();
+        \App\Models\Tour::truncate();
+        \App\Models\Transport::truncate();
+        \App\Models\TrackingStop::truncate();
+
+        // 3. Jalankan Seeder Produk (Penting agar data muncul di web)
         // Kita lewati ReviewSeeder agar testimonial tetap kosong
         \Illuminate\Support\Facades\Artisan::call('db:seed', [
             '--class' => 'ActivitySeeder',

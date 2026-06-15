@@ -41,7 +41,10 @@ class TransportSeeder extends Seeder
         ];
 
         foreach ($transports as $transport) {
-            Transport::create($transport);
+            Transport::updateOrCreate(
+                ['name' => $transport['name']],
+                $transport
+            );
         }
     }
 }
