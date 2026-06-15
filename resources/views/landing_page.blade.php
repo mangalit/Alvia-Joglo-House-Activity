@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvia Joglo Experience </title>
+    <title>Alvia Joglo Experience</title>
     <link rel="icon" href="{{ Vite::asset('resources/images/logo-title.jpg') }}" type="image/jpg">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
