@@ -42,8 +42,12 @@ Route::get('/deploy-helper', function () {
             '--force' => true
         ]);
 
-        // 3. Buat Symlink Storage
-        \Illuminate\Support\Facades\Artisan::call('storage:link');
+        // 3. Buat Symlink Storage (Cara manual agar tidak kena blokir exec() Hostinger)
+        $target = storage_path('app/public');
+        $link = public_path('storage');
+        if (!file_exists($link)) {
+            @symlink($target, $link);
+        }
         
         return 'Migration and Essential Product Seeding successful! (Review data is empty)';
     } catch (\Exception $e) {
