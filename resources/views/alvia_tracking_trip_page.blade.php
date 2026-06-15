@@ -208,6 +208,36 @@
 
     </section>
 
+    <!-- 4. BOOKING SECTION -->
+    <section class="transport-service-section" data-aos="fade-up">
+        <div class="ts-container">
+            <div class="ts-header" data-aos="fade-up" data-aos-delay="200">
+                <h2>BOOKING YOUR TRIP</h2>
+                <div class="ts-line"></div>
+                <p class="route">CHOOSE YOUR PERFECT TRACKING EXPERIENCE</p>
+            </div>
+
+            <div class="ts-pricing-wrapper">
+                <!-- Short Track -->
+                <div class="ts-card" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Short Track</h4>
+                    <div class="price">350k<span class="pax" style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 400; color: #000000; letter-spacing: 1px; margin-left: 5px;">/PAX</span></div>
+                    <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the Tracking Trip - Short Track. Could you provide more information?") }}" target="_blank" class="btn-tour-book">BOOK NOW</a>
+                </div>
+
+                <!-- Divider -->
+                <div class="ts-divider" data-aos="fade-in" data-aos-delay="400"></div>
+
+                <!-- Long Track -->
+                <div class="ts-card" data-aos="fade-up" data-aos-delay="500">
+                    <h4>Long Track</h4>
+                    <div class="price">550k<span class="pax" style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 400; color: #000000; letter-spacing: 1px; margin-left: 5px;">/PAX</span></div>
+                    <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the Tracking Trip - Long Track. Could you provide more information?") }}" target="_blank" class="btn-tour-book">BOOK NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="main-footer">
         <div class="footer-container">
