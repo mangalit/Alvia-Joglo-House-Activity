@@ -331,7 +331,11 @@
 
                 if (cat !== 'all') {
                     // Add "SHOW ALL [CATEGORY]" button
-                    const allBtn = createSubFilterBtn('ALL ' + cat.toUpperCase(), 'all', true);
+                    let displayCat = cat;
+                    if (cat === 'tracking') {
+                        displayCat = 'trekking';
+                    }
+                    const allBtn = createSubFilterBtn('ALL ' + displayCat.toUpperCase(), 'all', true);
                     subFilterContainer.appendChild(allBtn);
 
                     productData[cat].forEach(prod => {
