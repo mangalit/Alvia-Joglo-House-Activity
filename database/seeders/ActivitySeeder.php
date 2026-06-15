@@ -17,8 +17,8 @@ class ActivitySeeder extends Seeder
                 'price_info' => 'Enjoy the river adventure for Rp 900k / pax',
                 'card_title' => 'Rafting Adventure',
                 'description' => 'Immerse yourself in the thrill of nature with our exhilarating river rafting experience. Navigate through refreshing rapids while being surrounded by lush tropical jungles and breathtaking landscapes. Guided by our professionals, this adventure promises a perfect blend of excitement and safety, creating unforgettable memories during your holiday.',
-                'bg_image' => 'rafting-bg.png',
-                'images' => ['rafting-1.png', 'rafting-2.png', 'rafting-3.png', 'rafting-4.png'],
+                'bg_image' => 'rafting-bg.jpg',
+                'images' => ['rafting-1.jpg', 'rafting-2.jpg', 'rafting-3.jpg', 'rafting-4.jpg'],
                 'is_reverse' => false,
             ],
             [
@@ -39,8 +39,8 @@ class ActivitySeeder extends Seeder
                 'price_info' => 'Explore the track for Rp 1.200k(single) or 1.600k(tandem)',
                 'card_title' => 'ATV Ride Tour',
                 'description' => "Gear up for an adrenaline-pumping journey through Bali's rugged terrains and lush landscapes with our ATV ride experience. Conquer challenging dirt trails, navigate through traditional villages, and immerse yourself in the island's untouched natural beauty. Suitable for both beginners and experienced riders, this thrilling adventure offers a unique and exhilarating way to explore the great outdoors.",
-                'bg_image' => 'atv-bg.png',
-                'images' => ['atv-1.png', 'atv-2.png', 'atv-3.png', 'atv-4.png'],
+                'bg_image' => 'atv-bg.jpg',
+                'images' => ['atv-1.jpg', 'atv-2.jpg', 'atv-3.jpg', 'atv-4.jpg'],
                 'is_reverse' => false,
             ],
             [

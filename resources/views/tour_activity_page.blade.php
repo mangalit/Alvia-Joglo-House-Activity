@@ -17,7 +17,7 @@
          ========================================================= -->
     <nav class="navbar">
         <a href="{{ url('/') }}"  class="logo-container">
-            <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Alvia Logo" class="logo-img">
+            <img src="{{ Vite::asset('resources/images/Logo.png') }}" alt="Alvia Logo" class="logo-img">
             <span class="logo-text">Experience</span>
         </a>
         <ul class="nav-links" id="navLinks">
@@ -97,7 +97,7 @@
         <div class="footer-container">
             <!-- (Isi footer sesuai standar yang Anda berikan sebelumnya) -->
             <a href="{{ url('/') }}" class="footer-column brand-column">
-                <img src="{{ Vite::asset('resources/images/logo.png') }}" alt="Alvia Joglo Logo" class="footer-logo-img">
+                <img src="{{ Vite::asset('resources/images/Logo.png') }}" alt="Alvia Joglo Logo" class="footer-logo-img">
                 <span class="footer-logo-text">Experience</span>
             </a>
             <div class="footer-column nav-column">
