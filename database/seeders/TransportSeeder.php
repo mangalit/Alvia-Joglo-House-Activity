@@ -25,7 +25,7 @@ class TransportSeeder extends Seeder
             [
                 'name' => 'YAMAHA N-MAX',
                 'type' => 'rent',
-                'price' => 'RP 250K/DAY',
+                'price' => 'RP 250K',
                 'description' => "PREMIUM MAXI SCOOTER\nCOMFORTABLE RIDING POSITION\nHELMETS INCLUDED",
                 'image' => 'rent-nmax.jpg',
                 'is_reverse' => false,
@@ -33,7 +33,7 @@ class TransportSeeder extends Seeder
             [
                 'name' => 'HONDA SCOOPY',
                 'type' => 'rent',
-                'price' => 'RP 150K/DAY',
+                'price' => 'RP 150K',
                 'description' => "CLASSIC & STYLISH DESIGN\nEASY TO RIDE\nHELMETS INCLUDED",
                 'image' => 'rent-scoopy.jpg',
                 'is_reverse' => true,
