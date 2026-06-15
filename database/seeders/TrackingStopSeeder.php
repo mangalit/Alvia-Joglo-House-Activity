@@ -13,7 +13,7 @@ class TrackingStopSeeder extends Seeder
             [
                 'name' => 'Golden Sunrise Terraces',
                 'description' => 'Experience the serene magic of Bali as the first light of day gracefully breaks over the horizon. Watch as the golden sunrays gently illuminate the morning dew across the sweeping, emerald green rice terraces. This peaceful morning walk offers a moment of pure tranquility, allowing you to breathe in the crisp, fresh countryside air as the island slowly awakens.',
-                'image' => 'track-sunrise.png',
+                'image' => 'track-sunrise.jpg',
                 'track_type' => 'short',
                 'is_reverse' => false,
             ],

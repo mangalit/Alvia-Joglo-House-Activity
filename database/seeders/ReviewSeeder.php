@@ -61,7 +61,7 @@ class ReviewSeeder extends Seeder
 
         // --- TRACKING ---
         $trackingIds = [1, 2]; // Short and Long
-        $trackNames = ['Short Track', 'Long Track'];
+        $trackNames = ['Short Trek', 'Long Trek'];
         foreach ($trackingIds as $index => $id) {
             $reviews[] = [
                 'activity_type' => 'tracking',
