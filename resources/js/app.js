@@ -1,4 +1,9 @@
 import './bootstrap';
+
+// Pastikan semua gambar di resources/images ikut di-build oleh Vite
+import.meta.glob([
+    '../images/**',
+]);
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

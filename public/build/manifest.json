@@ -8,13 +8,293 @@
       "app.css"
     ]
   },
+  "resources/images/Logo.png": {
+    "file": "assets/Logo-BlTgPBFq.png",
+    "src": "resources/images/Logo.png"
+  },
+  "resources/images/about-blur-bg.png": {
+    "file": "assets/about-blur-bg-BVVFboJk.png",
+    "src": "resources/images/about-blur-bg.png"
+  },
+  "resources/images/about-hero-bg.jpg": {
+    "file": "assets/about-hero-bg-vSI23EOK.jpg",
+    "src": "resources/images/about-hero-bg.jpg"
+  },
+  "resources/images/activity-hero.jpg": {
+    "file": "assets/tubing-bg-CpS2fec2.jpg",
+    "src": "resources/images/activity-hero.jpg"
+  },
+  "resources/images/art-2.jpg": {
+    "file": "assets/art-2-CpzXZu1-.jpg",
+    "src": "resources/images/art-2.jpg"
+  },
+  "resources/images/art-3.jpg": {
+    "file": "assets/art-3-BkEhjzIy.jpg",
+    "src": "resources/images/art-3.jpg"
+  },
+  "resources/images/art-4.jpg": {
+    "file": "assets/art-4-DiiLflQ3.jpg",
+    "src": "resources/images/art-4.jpg"
+  },
+  "resources/images/atv-1.jpg": {
+    "file": "assets/atv-1-Ba9M-2Da.jpg",
+    "src": "resources/images/atv-1.jpg"
+  },
+  "resources/images/atv-2.jpg": {
+    "file": "assets/atv-2-BUMhlc_f.jpg",
+    "src": "resources/images/atv-2.jpg"
+  },
+  "resources/images/atv-3.jpg": {
+    "file": "assets/atv-3-D9092DLS.jpg",
+    "src": "resources/images/atv-3.jpg"
+  },
+  "resources/images/atv-4.jpg": {
+    "file": "assets/atv-4-CigwBOC7.jpg",
+    "src": "resources/images/atv-4.jpg"
+  },
+  "resources/images/atv-bg.jpg": {
+    "file": "assets/atv-bg-BLQA0eXA.jpg",
+    "src": "resources/images/atv-bg.jpg"
+  },
   "resources/images/contact-bg-mobile.jpeg": {
     "file": "assets/contact-bg-mobile-6VXgOu3a.jpeg",
     "src": "resources/images/contact-bg-mobile.jpeg"
   },
+  "resources/images/contact-bg.jpg": {
+    "file": "assets/contact-bg-DADIeI2C.jpg",
+    "src": "resources/images/contact-bg.jpg"
+  },
+  "resources/images/cycling-1.jpg": {
+    "file": "assets/cycling-1-COTw8MfC.jpg",
+    "src": "resources/images/cycling-1.jpg"
+  },
+  "resources/images/cycling-2.jpg": {
+    "file": "assets/cycling-2-DUe0vhas.jpg",
+    "src": "resources/images/cycling-2.jpg"
+  },
+  "resources/images/cycling-3.jpg": {
+    "file": "assets/cycling-3-DKKaYwQs.jpg",
+    "src": "resources/images/cycling-3.jpg"
+  },
+  "resources/images/cycling-4.jpg": {
+    "file": "assets/cycling-4-B0_pFpcE.jpg",
+    "src": "resources/images/cycling-4.jpg"
+  },
+  "resources/images/cycling-bg.jpg": {
+    "file": "assets/cycling-bg-IyiQNtA7.jpg",
+    "src": "resources/images/cycling-bg.jpg"
+  },
+  "resources/images/east-2.jpg": {
+    "file": "assets/east-2-CZZw0nYA.jpg",
+    "src": "resources/images/east-2.jpg"
+  },
+  "resources/images/east-3.jpg": {
+    "file": "assets/east-3-CzGMQ-8S.jpg",
+    "src": "resources/images/east-3.jpg"
+  },
+  "resources/images/east-4.jpg": {
+    "file": "assets/east-4-DUcqMiyU.jpg",
+    "src": "resources/images/east-4.jpg"
+  },
   "resources/images/hero-bg.jpg": {
     "file": "assets/hero-bg-Cp3V-u4f.jpg",
     "src": "resources/images/hero-bg.jpg"
+  },
+  "resources/images/logo-title.jpg": {
+    "file": "assets/logo-title-BmG9X6AW.jpg",
+    "src": "resources/images/logo-title.jpg"
+  },
+  "resources/images/menu-activity.jpg": {
+    "file": "assets/menu-activity-Y7Sf1cZ2.jpg",
+    "src": "resources/images/menu-activity.jpg"
+  },
+  "resources/images/menu-tour.jpg": {
+    "file": "assets/menu-tour-BgWOxVO9.jpg",
+    "src": "resources/images/menu-tour.jpg"
+  },
+  "resources/images/menu-tracking.jpg": {
+    "file": "assets/menu-tracking-CGsZ7_IG.jpg",
+    "src": "resources/images/menu-tracking.jpg"
+  },
+  "resources/images/menu-transport.jpg": {
+    "file": "assets/menu-transport-BZCJx4q0.jpg",
+    "src": "resources/images/menu-transport.jpg"
+  },
+  "resources/images/north-2.jpg": {
+    "file": "assets/north-2-mOoRkAVN.jpg",
+    "src": "resources/images/north-2.jpg"
+  },
+  "resources/images/north-3.jpg": {
+    "file": "assets/north-3-DZqDLSvn.jpg",
+    "src": "resources/images/north-3.jpg"
+  },
+  "resources/images/north-4.png": {
+    "file": "assets/north-4-Us-_oeTH.png",
+    "src": "resources/images/north-4.png"
+  },
+  "resources/images/rafting-1.jpg": {
+    "file": "assets/rafting-1-hTN1nhKb.jpg",
+    "src": "resources/images/rafting-1.jpg"
+  },
+  "resources/images/rafting-2.jpg": {
+    "file": "assets/rafting-2-D-LtdxVw.jpg",
+    "src": "resources/images/rafting-2.jpg"
+  },
+  "resources/images/rafting-3.jpg": {
+    "file": "assets/rafting-3-WPjzLx_H.jpg",
+    "src": "resources/images/rafting-3.jpg"
+  },
+  "resources/images/rafting-4.jpg": {
+    "file": "assets/rafting-4-DpEPwFZM.jpg",
+    "src": "resources/images/rafting-4.jpg"
+  },
+  "resources/images/rafting-bg.jpg": {
+    "file": "assets/rafting-bg-BsQI5tnv.jpg",
+    "src": "resources/images/rafting-bg.jpg"
+  },
+  "resources/images/rent-nmax.jpg": {
+    "file": "assets/rent-nmax-BMrVYGLK.jpg",
+    "src": "resources/images/rent-nmax.jpg"
+  },
+  "resources/images/rent-scoopy.jpg": {
+    "file": "assets/rent-scoopy-Byr2hMxr.jpg",
+    "src": "resources/images/rent-scoopy.jpg"
+  },
+  "resources/images/south-1.jpg": {
+    "file": "assets/south-1-DWoM0lxZ.jpg",
+    "src": "resources/images/south-1.jpg"
+  },
+  "resources/images/south-2.jpg": {
+    "file": "assets/south-2-Cvm4j8KQ.jpg",
+    "src": "resources/images/south-2.jpg"
+  },
+  "resources/images/south-4.jpg": {
+    "file": "assets/south-4-3OyeNS1N.jpg",
+    "src": "resources/images/south-4.jpg"
+  },
+  "resources/images/swing-1.jpeg": {
+    "file": "assets/swing-1-CLxuhDjn.jpeg",
+    "src": "resources/images/swing-1.jpeg"
+  },
+  "resources/images/swing-2.jpeg": {
+    "file": "assets/swing-2-kq0L1JBt.jpeg",
+    "src": "resources/images/swing-2.jpeg"
+  },
+  "resources/images/swing-3.jpeg": {
+    "file": "assets/swing-3-bZLUYY10.jpeg",
+    "src": "resources/images/swing-3.jpeg"
+  },
+  "resources/images/swing-4.jpeg": {
+    "file": "assets/swing-4-BrK6DSFZ.jpeg",
+    "src": "resources/images/swing-4.jpeg"
+  },
+  "resources/images/swing-bg.jpeg": {
+    "file": "assets/swing-bg-DI9UHBTH.jpeg",
+    "src": "resources/images/swing-bg.jpeg"
+  },
+  "resources/images/tour-art.jpg": {
+    "file": "assets/tour-art-BjL-voNw.jpg",
+    "src": "resources/images/tour-art.jpg"
+  },
+  "resources/images/tour-east.png": {
+    "file": "assets/tour-east-DJ9xV8k5.png",
+    "src": "resources/images/tour-east.png"
+  },
+  "resources/images/tour-hero-bg.jpg": {
+    "file": "assets/tour-hero-bg-DR_oFma4.jpg",
+    "src": "resources/images/tour-hero-bg.jpg"
+  },
+  "resources/images/tour-north.jpg": {
+    "file": "assets/tour-north-C1j0WF41.jpg",
+    "src": "resources/images/tour-north.jpg"
+  },
+  "resources/images/tour-south.jpg": {
+    "file": "assets/tour-south-C5-XMLAZ.jpg",
+    "src": "resources/images/tour-south.jpg"
+  },
+  "resources/images/tour-ubud.jpg": {
+    "file": "assets/tour-ubud-BZ0ozQre.jpg",
+    "src": "resources/images/tour-ubud.jpg"
+  },
+  "resources/images/tour-west.jpg": {
+    "file": "assets/tour-west-CBOR2rhA.jpg",
+    "src": "resources/images/tour-west.jpg"
+  },
+  "resources/images/track-market.jpg": {
+    "file": "assets/track-market-Ci0oBrgo.jpg",
+    "src": "resources/images/track-market.jpg"
+  },
+  "resources/images/track-river.jpg": {
+    "file": "assets/track-river-BlyhPwiw.jpg",
+    "src": "resources/images/track-river.jpg"
+  },
+  "resources/images/track-school.jpg": {
+    "file": "assets/track-school-BkNYBevr.jpg",
+    "src": "resources/images/track-school.jpg"
+  },
+  "resources/images/track-sunrise.jpg": {
+    "file": "assets/track-sunrise-BxzPnZEa.jpg",
+    "src": "resources/images/track-sunrise.jpg"
+  },
+  "resources/images/track-temple.jpg": {
+    "file": "assets/track-temple-CJp5HJ5O.jpg",
+    "src": "resources/images/track-temple.jpg"
+  },
+  "resources/images/tracking-hero.jpg": {
+    "file": "assets/tracking-hero-CqMqCXEI.jpg",
+    "src": "resources/images/tracking-hero.jpg"
+  },
+  "resources/images/tubing-1.png": {
+    "file": "assets/tubing-1-wb6xGxCx.png",
+    "src": "resources/images/tubing-1.png"
+  },
+  "resources/images/tubing-2.jpg": {
+    "file": "assets/tubing-2-C_zI6l7Y.jpg",
+    "src": "resources/images/tubing-2.jpg"
+  },
+  "resources/images/tubing-3.jpg": {
+    "file": "assets/tubing-3-1F2qPRlg.jpg",
+    "src": "resources/images/tubing-3.jpg"
+  },
+  "resources/images/tubing-4.png": {
+    "file": "assets/tubing-4-BgxlLjR-.png",
+    "src": "resources/images/tubing-4.png"
+  },
+  "resources/images/tubing-bg.jpg": {
+    "file": "assets/tubing-bg-CpS2fec2.jpg",
+    "src": "resources/images/activity-hero.jpg"
+  },
+  "resources/images/ubud-1.jpg": {
+    "file": "assets/ubud-1-B-hAiY1Q.jpg",
+    "src": "resources/images/ubud-1.jpg"
+  },
+  "resources/images/ubud-2.jpg": {
+    "file": "assets/ubud-2-DTJbY5p8.jpg",
+    "src": "resources/images/ubud-2.jpg"
+  },
+  "resources/images/ubud-3.jpg": {
+    "file": "assets/ubud-3-ZcXVkyow.jpg",
+    "src": "resources/images/ubud-3.jpg"
+  },
+  "resources/images/ubud-4.jpg": {
+    "file": "assets/ubud-4-Db4wDe1q.jpg",
+    "src": "resources/images/ubud-4.jpg"
+  },
+  "resources/images/west-1.jpg": {
+    "file": "assets/west-1-CdbdsQac.jpg",
+    "src": "resources/images/west-1.jpg"
+  },
+  "resources/images/west-2.jpg": {
+    "file": "assets/west-2-CDZ5DRj6.jpg",
+    "src": "resources/images/west-2.jpg"
+  },
+  "resources/images/west-3.jpg": {
+    "file": "assets/west-3-B5JHd0Oc.jpg",
+    "src": "resources/images/west-3.jpg"
+  },
+  "resources/images/west-4.jpg": {
+    "file": "assets/west-4-CktKfRsV.jpg",
+    "src": "resources/images/west-4.jpg"
   },
   "resources/js/app.js": {
     "file": "assets/app-PBDXhaGH.js",
