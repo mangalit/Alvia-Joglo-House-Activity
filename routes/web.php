@@ -20,9 +20,32 @@ Route::get('/deploy-helper', function () {
         return 'Unauthorized';
     }
     try {
+        // 1. Jalankan Migrasi (Buat Tabel)
         \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        
+        // 2. Jalankan Seeder Produk (Penting agar data muncul di web)
+        // Kita lewati ReviewSeeder agar testimonial tetap kosong
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'ActivitySeeder',
+            '--force' => true
+        ]);
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'TourSeeder',
+            '--force' => true
+        ]);
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'TrackingStopSeeder',
+            '--force' => true
+        ]);
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'TransportSeeder',
+            '--force' => true
+        ]);
+
+        // 3. Buat Symlink Storage
         \Illuminate\Support\Facades\Artisan::call('storage:link');
-        return 'Migration and Storage Link successful!';
+        
+        return 'Migration and Essential Product Seeding successful! (Review data is empty)';
     } catch (\Exception $e) {
         return 'Error: ' . $e->getMessage();
     }
