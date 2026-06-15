@@ -140,7 +140,7 @@
                     @php
                         $allProductCategories = [
                             'activity' => ['label' => 'ACTIVITIES', 'items' => $activities],
-                            'tracking' => ['label' => 'TRACKING', 'items' => collect($trackingTrips)->map(fn($t) => (object)$t)],
+                            'tracking' => ['label' => 'TREKKING', 'items' => collect($trackingTrips)->map(fn($t) => (object)$t)],
                             'tour' => ['label' => 'TOURS', 'items' => $tours],
                             'transport' => ['label' => 'TRANSPORT', 'items' => $transports]
                         ];
