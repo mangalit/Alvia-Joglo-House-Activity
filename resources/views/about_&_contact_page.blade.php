@@ -23,7 +23,7 @@
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
-            <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+            <li><a href="{{ url('/tracking') }}">ALVIA TREKKING TRIP</a></li>
             <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
             <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
             <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>
@@ -167,7 +167,7 @@
                 <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-nav-links">
                     <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
-                    <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+                    <li><a href="{{ url('/tracking') }}">ALVIA TREKKING TRIP</a></li>
                     <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
                     <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
                     <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>

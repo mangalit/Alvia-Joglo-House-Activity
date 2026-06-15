@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvia Tracking Trip - Alvia Joglo Experience</title>
+    <title>Alvia Trekking Trip - Alvia Joglo Experience</title>
     <link rel="icon" href="{{ Vite::asset('resources/images/logo-title.jpg') }}" type="image/jpg">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -20,7 +20,7 @@
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
-            <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+            <li><a href="{{ url('/tracking') }}">ALVIA TREKKKING TRIP</a></li>
             <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
             <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
             <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>
@@ -37,7 +37,7 @@
         <div class="activity-hero-overlay"></div>
         <div class="activity-hero-box-outline" data-aos="zoom-in" data-aos-duration="1200">
             <div class="activity-hero-box">
-                <h1 class="activity-hero-title">TRACKING</h1>
+                <h1 class="activity-hero-title">TREKKING</h1>
             </div>
         </div>
     </header>
@@ -45,7 +45,7 @@
     <!-- 2. INTRO SECTION -->
     <section class="tracking-intro">
         <div class="intro-left" data-aos="fade-right" data-aos-delay="200">
-            <h2>Alvia<br>Tracking Trip</h2>
+            <h2>Alvia<br>Trekking Trip</h2>
         </div>
         <div class="intro-right" data-aos="fade-left" data-aos-delay="400">
             <h3>Authentic Journey</h3>
@@ -62,7 +62,7 @@
     <!-- 3. TIMELINE HEADER (SHORT TRACK) -->
     <section class="tracking-timeline-header" data-aos="fade-up">
         <div class="timeline-header">
-            <h2>Short Track</h2>
+            <h2>Short Trek</h2>
             <p class="subtitle">2 Hours Duration | Start From 6AM</p>
             <p class="price">Include a Refreshing Young Coconut | 350k/pax</p>
         </div>
@@ -141,7 +141,7 @@
         </div>
 
         <div class="timeline-header long-track-header reveal-on-scroll" data-aos="fade-up" data-aos-delay="200">
-            <h2>Extend Your Journey To The<br>Long Track</h2>
+            <h2>Extend Your Journey To The<br>Long Trek</h2>
             <p class="subtitle">4 Hours Duration | 550k/pax</p>
         </div>
     </section>
@@ -214,13 +214,13 @@
             <div class="ts-header" data-aos="fade-up" data-aos-delay="200">
                 <h2>BOOKING YOUR TRIP</h2>
                 <div class="ts-line"></div>
-                <p class="route">CHOOSE YOUR PERFECT TRACKING EXPERIENCE</p>
+                <p class="route">CHOOSE YOUR PERFECT TREKKING EXPERIENCE</p>
             </div>
 
             <div class="ts-pricing-wrapper">
                 <!-- Short Track -->
                 <div class="ts-card" data-aos="fade-up" data-aos-delay="300">
-                    <h4>Short Track</h4>
+                    <h4>Short Trek</h4>
                     <div class="price">350k<span class="pax" style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 400; color: #000000; letter-spacing: 1px; margin-left: 5px;">/PAX</span></div>
                     <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the Tracking Trip - Short Track. Could you provide more information?") }}" target="_blank" class="btn-tour-book">BOOK NOW</a>
                 </div>
@@ -230,7 +230,7 @@
 
                 <!-- Long Track -->
                 <div class="ts-card" data-aos="fade-up" data-aos-delay="500">
-                    <h4>Long Track</h4>
+                    <h4>Long Trek</h4>
                     <div class="price">550k<span class="pax" style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 400; color: #000000; letter-spacing: 1px; margin-left: 5px;">/PAX</span></div>
                     <a href="https://wa.me/6287899030306?text={{ urlencode("Hello Alvia Joglo Experience, I would like to book the Tracking Trip - Long Track. Could you provide more information?") }}" target="_blank" class="btn-tour-book">BOOK NOW</a>
                 </div>
@@ -249,7 +249,7 @@
                 <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-nav-links">
                     <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
-                    <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+                    <li><a href="{{ url('/tracking') }}">ALVIA TREKKING TRIP</a></li>
                     <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
                     <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
                     <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>

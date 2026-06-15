@@ -41,7 +41,7 @@
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
-            <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+            <li><a href="{{ url('/tracking') }}">ALVIA TREKKING TRIP</a></li>
             <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
             <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
             <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>
@@ -107,7 +107,7 @@
                 <div class="grid-middle-wrapper">
                     <a href="{{ url('/tracking') }}" class="grid-card card-tracking" data-aos="zoom-in" data-aos-delay="200">
                         <img src="{{ Vite::asset('resources/images/menu-tracking.jpg') }}" alt="Tracking">
-                        <div class="card-top-overlay"><h3>Tracking</h3></div>
+                        <div class="card-top-overlay"><h3>Trekking</h3></div>
                     </a>
 
                     <a href="{{ url('/transport') }}" class="grid-card card-transport" data-aos="zoom-in" data-aos-delay="300">
@@ -432,7 +432,7 @@
                 <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-nav-links">
                     <li><a href="{{ url('/activity') }}">ACTIVITY</a></li>
-                    <li><a href="{{ url('/tracking') }}">ALVIA TRACKING TRIP</a></li>
+                    <li><a href="{{ url('/tracking') }}">ALVIA TREKKING TRIP</a></li>
                     <li><a href="{{ url('/tour') }}">TOUR ACTIVITY</a></li>
                     <li><a href="{{ url('/transport') }}">TRANSPORT</a></li>
                     <li><a href="{{ url('/about') }}">ABOUT & CONTACT</a></li>
