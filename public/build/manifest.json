@@ -1,0 +1,28 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CTFdU5pc.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/images/contact-bg-mobile.jpeg": {
+    "file": "assets/contact-bg-mobile-6VXgOu3a.jpeg",
+    "src": "resources/images/contact-bg-mobile.jpeg"
+  },
+  "resources/images/hero-bg.jpg": {
+    "file": "assets/hero-bg-Cp3V-u4f.jpg",
+    "src": "resources/images/hero-bg.jpg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-PBDXhaGH.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-DvB2Xm2x.css"
+    ]
+  }
+}
