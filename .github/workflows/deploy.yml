@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/u607717861/public_html
+            cd public_html
             git pull origin main
             php artisan config:cache
             php artisan route:cache
