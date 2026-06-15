@@ -18,7 +18,9 @@ jobs:
           timeout: 60s
           command_timeout: 10m
           script: |
-            cd public_html
+            pwd
+            ls -F
+            cd domains/alviajogloexperience.com/public_html
             git pull origin main
             php artisan config:cache
             php artisan route:cache
