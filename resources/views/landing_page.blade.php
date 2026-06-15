@@ -264,7 +264,7 @@
                                 @endforeach
                             </optgroup>
 
-                            <optgroup label="TRACKING TRIPS" style="background: #000; color: #AC8F57;">
+                            <optgroup label="TREKKING TRIPS" style="background: #000; color: #AC8F57;">
                                 @foreach($trackingTrips as $track)
                                     <option value="tracking:{{ $track['id'] }}" style="background: #000; color: #fff;">{{ $track['name'] }}</option>
                                 @endforeach
