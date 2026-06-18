@@ -23,7 +23,7 @@ class LandingController extends Controller
             ['id' => 2, 'name' => 'Long Trek (4 Hours)'],
         ];
 
-        $reviews = Review::latest()->get();
+        $reviews = Review::where('is_approved', true)->latest()->get();
 
         return view('landing_page', compact('activities', 'tours', 'transports', 'trackingTrips', 'reviews'));
     }
