@@ -2956,25 +2956,20 @@ a {
     background-size: cover !important;
 }
 
-@media (max-width: 768px) {
-    .activity-hero {
-        /* 1. KUNCI UTAMA: Membatalkan efek parallax agar gambar tidak melar/nge-zoom */
-        background-attachment: scroll !important;
-
-        /* 2. Memastikan gambar proporsional menutupi kotak */
-        background-size: cover !important;
-
-        /* 3. Mengunci titik fokus persis di tengah agar perahu karet terlihat jelas */
-        background-position: center center !important;
-    }
+@media (max-width: 1024px) {
+    .about-hero,
+    .about-description,
+    .contact-section,
+    .activity-hero,
     .tour-hero-section {
-        /* 1. KUNCI UTAMA: Membatalkan efek parallax agar gambar tidak melar/nge-zoom */
+        /* 1. KUNCI UTAMA: Membatalkan efek fixed/parallax di HP/Tablet agar gambar tidak zoom-in mendadak */
         background-attachment: scroll !important;
 
-        /* 2. Memastikan gambar proporsional menutupi kotak */
+        /* 2. Memastikan gambar tetap menutupi area secara proporsional */
         background-size: cover !important;
+        -webkit-background-size: cover !important;
 
-        /* 3. Mengunci titik fokus persis di tengah agar perahu karet terlihat jelas */
+        /* 3. Mengunci posisi gambar di tengah */
         background-position: center center !important;
     }
 }
